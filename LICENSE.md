@@ -23,6 +23,8 @@ Specified: You are free to use GLPI for any activity which is personal, professi
 
 GLPI is a free software distributed under GNU/GPL version 2 licence.
 
+From: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
 GNU GENERAL PUBLIC LICENSE
 
 Version 2, June 1991
