@@ -1,9 +1,15 @@
-What is HackSpace:
-=========================
-It´s a Fork of the GLPI
+hack-space
+==========
+
+Hack Space is a GLPI Customized because I Think: If I improved this many people can do a Lot of new activities and have a lot of funcionalitites
+
+I mean.... More Fun!
+
+SO...
+
+First one...
 
 What is GLPI:
-=========================
 
 GLPI is the Information Resource-Manager with an additional Administration- Interface. You can use it to build up a database with an inventory for your company (computer, software, printers...). It has enhanced functions to make the daily life for the administrators easier, like a job-tracking-system with mail-notification and methods to build a database with basic information about your network-topology.
 
@@ -13,31 +19,18 @@ The principal functionalities of the application are :
 
 2) management and the history of the maintenance actions and the bound procedures. This application is dynamic and is directly connected to the users who can post requests to the technicians. An interface thus authorizes the latter with if required preventing the service of maintenance and indexing a problem encountered with one of the technical resources to which they have access.
 
-More info: http://glpi-project.org
+What is Hack Space:
 
-Running on OpenShift
---------------------
+The same but with Vitamines.
 
-Create an account at http://openshift.redhat.com/
+Wich Vitamines?
 
-Create a PHP application with MySQL
+New Interface
 
-	rhc app create hackspace php-5.3 mysql-5.1
+New Htaccess
 
-Make a note of the username, password, and host name as you will need to use these to complete the HackSpace installation on OpenShift
+New Funcionalities
 
-Add this upstream hackspace quickstart repo
+New Concepts
 
-	cd hackspace/php
-	rm -rf *
-	git remote add upstream -m master git://github.com/elitelinux/hack-space.git
-	git pull -s recursive -X theirs upstream master
-
-Then push the repo upstream to OpenShift
-
-	git push
-
-That's it, you can now checkout your application at:
-
-	http://hackspace-$yournamespace.rhcloud.com
-
+All is orented to ITIL, ISO, PDCA, Agile Metodologies, and so on....
