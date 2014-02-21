@@ -2,7 +2,58 @@ Make Compatible with Open Shift
 
 _________________________________-
 Examples:
-_________________________________
+_________________________________ 
+<?php
+/**
+* @package Joomla.Platform
+* @subpackage Registry
+*
+* @copyright Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
+* @license GNU General Public License version 2 or later; see LICENSE
+*/
+
+defined('JPATH_PLATFORM') or die;
+
+/**
+* PHP class format handler for JRegistry
+*
+* @package Joomla.Platform
+* @subpackage Registry
+* @since 11.1
+*/
+class JRegistryFormatPHP extends JRegistryFormat
+{
+/**
+* Converts an object into a php class string.
+* - NOTE: Only one depth level is supported.
+*
+* @param object $object Data Source Object
+* @param array $params Parameters used by the formatter
+*
+* @return string Config class formatted string
+*
+* @since 11.1
+*/
+public function objectToString($object, $params = array())
+{
+// Build the object variables string
+$vars = '';
+
+foreach (get_object_vars($object) as $k => $v)
+{
+if (is_scalar($v))
+{
+$vars .= "\tpublic $" . $k . " = '" . addcslashes($v, '\\\'') . "';\n";
+}
+elseif (is_array($v) || is_object($v))
+{
+$vars .= "\tpublic $" . $k . " = " . $this->getArrayString((array) $v) . ";\n";
+}
+}
+
+$str = "<?php\nclass " . $params['class'] . " {\n";
+$str .= $vars;
+                
                 //Support OpenShift
                 $str .= <<<'CONSTRUCT'
 public function __construct() {
