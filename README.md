@@ -40,4 +40,61 @@ Then push the repo upstream to OpenShift
 That's it, you can now checkout your application at:
 
 	http://hackspace-$yournamespace.rhcloud.com
+	
+	
+More info:
+-----------
+
+http://www.infotelcorp.com/services/technical-expertise/glpi/
+
+GLPI provides the following features:
+
+Inventory Management
+--------------------
+
+GLPI provides controlled inventory management to
+
+    Administer all IT components.
+    Ensure comprehensive management (resources, costs).
+    Contains dedicated wiki knowledge base.
+    Provide efficient support.
+    Control the entire life cycle of hardware.
+    Ensure reliable and coherent IT portfolio status.
+
+Support Management
+------------------
+
+GLPI provides comprehensive management of service desk processes.
+
+    Single point of entry for user support.
+    Complies with ITIL v2 – v3 standards.
+    Efficient processing by IT service, with history log.
+    Incident / Request / Issue / Change Management
+    Administrative closing of incidents and satisfaction surveys
+
+Reliable and efficient tool
+---------------------------
+
+GLPI integrates entirely with the company’s IT systems
+
+    Minimum technical requirements
+    Immediate implementation
+    Intuitive use
+    Customisable interface
+    Synchronisation with enterprise directories
+    Communication with messaging system
+
+Add-ons
+-------
+
+Through the use of add-ons, GLPI lets you add several functionalities.
+Infotel has developed around thirty add-ons for GLPI.
+
+    Personnel time and attendance management.
+    Mapping tool.
+    Project management (changes).
+    Material guarantee amounts from manufacturing sites.
+    IT Rack management.
+    Electronic orders and billing management.
+
 
