@@ -1,6 +1,6 @@
 What is HackSpace:
 =========================
-It´s a Fork of the GLPI
+It´s a Fork modified respecting licensing, regarding orientation and improvements in innovation concept of the app GLPI This app will be Oriented to: Management of the Smart Cities, Ideas for Social Innovation, entrepreneurial ideas, Coordination and Clusters Business, Living Labs and control in government sectors
 
 What is GLPI:
 =========================
