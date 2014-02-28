@@ -1,9 +1,9 @@
 <?php
 /*
- * @version $Id: rulemailcollector.class.php 20149 2013-02-06 19:07:28Z moyo $
+ * @version $Id: rulemailcollector.class.php 22696 2014-02-26 09:53:21Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
- Copyright (C) 2003-2013 by the INDEPNET Development Team.
+ Copyright (C) 2003-2014 by the INDEPNET Development Team.
 
  http://indepnet.net/   http://glpi-project.org
  -------------------------------------------------------------------------
@@ -312,11 +312,11 @@ class RuleMailCollector extends Rule {
                      if ($res != null) {
                         switch ($action->fields["field"]) {
                            case "_affect_entity_by_domain" :
-                              $entity_found = Entity::getEntityIDByDomain($res);
+                              $entity_found = Entity::getEntityIDByDomain(addslashes($res));
                               break;
 
                            case "_affect_entity_by_tag" :
-                              $entity_found = Entity::getEntityIDByTag($res);
+                              $entity_found = Entity::getEntityIDByTag(addslashes($res));
                               break;
                         }
 

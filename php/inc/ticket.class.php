@@ -1,9 +1,9 @@
 <?php
 /*
- * @version $Id: ticket.class.php 22429 2014-01-09 17:18:15Z moyo $
+ * @version $Id: ticket.class.php 22679 2014-02-21 14:03:09Z yllen $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
- Copyright (C) 2003-2013 by the INDEPNET Development Team.
+ Copyright (C) 2003-2014 by the INDEPNET Development Team.
 
  http://indepnet.net/   http://glpi-project.org
  -------------------------------------------------------------------------
@@ -1146,7 +1146,7 @@ class Ticket extends CommonITILObject {
       // Recompute default values based on values computed by rules
       $input = $this->computeDefaultValuesForAdd($input);
 
-      
+
       if (isset($input['_users_id_requester'])
           && ($input['_users_id_requester'] != $tmprequester)) {
          // if requester set by rule, clear address from mailcollector
@@ -1710,27 +1710,28 @@ class Ticket extends CommonITILObject {
       $isadmin = static::canUpdate();
       $actions = parent::getSpecificMassiveActions($checkitem);
 
-      if (TicketFollowup::canCreate()
-          && ($_SESSION['glpiactiveprofile']['interface'] == 'central')) {
-         $actions['add_followup'] = __('Add a new followup');
-      }
+      if ($_SESSION['glpiactiveprofile']['interface'] == 'central') {
+         if (TicketFollowup::canCreate()) {
+            $actions['add_followup'] = __('Add a new followup');
+         }
 
-      if (TicketTask::canCreate()) {
-         $actions['add_task'] = __('Add a new task');
-      }
+         if (TicketTask::canCreate()) {
+            $actions['add_task'] = __('Add a new task');
+         }
 
-      if (TicketValidation::canCreate()) {
-         $actions['submit_validation'] = __('Approval request');
-      }
+         if (TicketValidation::canCreate()) {
+            $actions['submit_validation'] = __('Approval request');
+         }
 
-      if (Session::haveRight("update_ticket","1")) {
-         $actions['add_actor']   = __('Add an actor');
-         $actions['link_ticket'] = _x('button', 'Link tickets');
-      }
-      if (Session::haveRight('transfer','r')
-            && Session::isMultiEntitiesMode()
-            && Session::haveRight("update_ticket","1")) {
-         $actions['add_transfer_list'] = _x('button', 'Add to transfer list');
+         if (Session::haveRight("update_ticket","1")) {
+            $actions['add_actor']   = __('Add an actor');
+            $actions['link_ticket'] = _x('button', 'Link tickets');
+         }
+         if (Session::haveRight('transfer','r')
+               && Session::isMultiEntitiesMode()
+               && Session::haveRight("update_ticket","1")) {
+            $actions['add_transfer_list'] = _x('button', 'Add to transfer list');
+         }
       }
       return $actions;
    }
@@ -3674,6 +3675,29 @@ class Ticket extends CommonITILObject {
          }
       }
 
+      // Check category / type validity
+      if ($values['itilcategories_id']) {
+         $cat = new ITILCategory();
+         if ($cat->getFromDB($values['itilcategories_id'])) {
+            switch ($values['type']) {
+               case self::INCIDENT_TYPE :
+                  if (!$cat->getField('is_incident')) {
+                     $values['itilcategories_id'] = 0;
+                  }
+                  break;
+
+               case self::DEMAND_TYPE :
+                  if (!$cat->getField('is_request')) {
+                     $values['itilcategories_id'] = 0;
+                  }
+                  break;
+
+               default :
+                  break;
+            }
+         }
+      }
+
       // Default check
       if ($ID > 0) {
          $this->check($ID,'r');
@@ -3723,7 +3747,7 @@ class Ticket extends CommonITILObject {
          $tt = $this->getTicketTemplateToUse($options['template_preview'], $values['type'],
                                              $values['itilcategories_id'], $values['entities_id']);
       }
-      
+
       // Predefined fields from template : reset them
       if (isset($values['_predefined_fields'])) {
          $values['_predefined_fields']
@@ -4522,7 +4546,7 @@ class Ticket extends CommonITILObject {
          echo "<tr class='tab_bg_1'>";
 
          if ($ID) {
-            if (Session::haveRight('delete_ticket',1)) {
+            if ($this->canDeleteItem()) {
                echo "<td class='tab_bg_2 center' colspan='2'>";
                if ($this->fields["is_deleted"] == 1) {
                   echo "<input type='submit' class='submit' name='restore' value='".
@@ -5178,7 +5202,8 @@ class Ticket extends CommonITILObject {
    static function showListForItem(CommonDBTM $item) {
       global $DB, $CFG_GLPI;
 
-      if (!Session::haveRight("show_all_ticket","1")) {
+      if (!Session::haveRight("show_all_ticket","1")
+          && !Session::haveRight("create_ticket","1")) {
          return false;
       }
 
@@ -5253,6 +5278,13 @@ class Ticket extends CommonITILObject {
          default :
             $restrict                 = "(`items_id` = '".$item->getID()."'
                                           AND `itemtype` = '".$item->getType()."')";
+            // you can only see your tickets
+            if (!Session::haveRight("show_all_ticket","1")) {
+               $restrict .= " AND (`glpi_tickets`.`users_id_recipient` = '".Session::getLoginUserID()."'
+                                   OR (`glpi_tickets_users`.`tickets_id` = '".$item->getID()."'
+                                       AND `glpi_tickets_users`.`users_id`
+                                            = '".Session::getLoginUserID()."'))";
+            }
             $order                    = '`glpi_tickets`.`date_mod` DESC';
 
             $options['field'][0]      = 12;
@@ -5293,19 +5325,23 @@ class Ticket extends CommonITILObject {
       echo "<table class='tab_cadre_fixe'>";
 
       if ($number > 0) {
+         if (Session::haveRight("show_all_ticket","1")) {
 
-         Session::initNavigateListItems('Ticket',
-         //TRANS : %1$s is the itemtype name, %2$s is the name of the item (used for headings of a list)
-                                        sprintf(__('%1$s = %2$s'), $item->getTypeName(1),
-                                                $item->getName()));
+            Session::initNavigateListItems('Ticket',
+            //TRANS : %1$s is the itemtype name, %2$s is the name of the item (used for headings of a list)
+                                           sprintf(__('%1$s = %2$s'), $item->getTypeName(1),
+                                                   $item->getName()));
 
-         echo "<tr><th colspan='11'>";
-         $title = sprintf(_n('Last %d ticket', 'Last %d tickets', $number), $number);
-         $link = "<a href='".$CFG_GLPI["root_doc"]."/front/ticket.php?".
-                  Toolbox::append_params($options,'&amp;')."'>".__('Show all')."</a>";
-         $title = printf(__('%1$s (%2$s)'), $title, $link);
-         echo "</th></tr>";
+            echo "<tr><th colspan='11'>";
+            $title = sprintf(_n('Last %d ticket', 'Last %d tickets', $number), $number);
+            $link = "<a href='".$CFG_GLPI["root_doc"]."/front/ticket.php?".
+                      Toolbox::append_params($options,'&amp;')."'>".__('Show all')."</a>";
+            $title = printf(__('%1$s (%2$s)'), $title, $link);
+            echo "</th></tr>";
 
+         } else {
+            echo "<tr><th colspan='11'>".__("You don't have right to see all tickets")."</th></tr>";
+         }
       } else {
          echo "<tr><th>".__('No ticket found.')."</th></tr>";
       }
@@ -5331,7 +5367,7 @@ class Ticket extends CommonITILObject {
       }
 
       echo "</table></div>";
-      
+
       // Tickets for linked items
       $linkeditems = $item->getLinkedItems();
       $restrict = array();
@@ -5342,7 +5378,8 @@ class Ticket extends CommonITILObject {
             }
          }
       }
-      if (count($restrict)) {
+      if (count($restrict)
+          && Session::haveRight("show_all_ticket","1")) {
          $query = "SELECT ".self::getCommonSelect()."
                    FROM `glpi_tickets` ".self::getCommonLeftJoin()."
                    WHERE ".implode(' OR ', $restrict).

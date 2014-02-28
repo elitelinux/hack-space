@@ -1,9 +1,9 @@
 <?php
 /*
- * @version $Id: entity.class.php 22253 2013-12-09 14:08:23Z yllen $
+ * @version $Id: entity.class.php 22696 2014-02-26 09:53:21Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
- Copyright (C) 2003-2013 by the INDEPNET Development Team.
+ Copyright (C) 2003-2014 by the INDEPNET Development Team.
 
  http://indepnet.net/   http://glpi-project.org
  -------------------------------------------------------------------------
@@ -1563,7 +1563,7 @@ class Entity extends CommonTreeDropdown {
     * @since version 0.84 (before in entitydata.class)
     *
     * @param $field
-    * @param $value
+    * @param $value must be addslashes
    **/
    private static function getEntityIDByField($field,$value) {
       global $DB;

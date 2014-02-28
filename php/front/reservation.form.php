@@ -1,9 +1,9 @@
 <?php
 /*
- * @version $Id: reservation.form.php 21535 2013-08-17 06:27:36Z moyo $
+ * @version $Id: reservation.form.php 22657 2014-02-12 16:17:54Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
- Copyright (C) 2003-2013 by the INDEPNET Development Team.
+ Copyright (C) 2003-2014 by the INDEPNET Development Team.
 
  http://indepnet.net/   http://glpi-project.org
  -------------------------------------------------------------------------

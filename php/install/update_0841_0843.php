@@ -1,9 +1,9 @@
 <?php
 /*
- * @version $Id: update_0841_0843.php 21802 2013-09-17 16:48:39Z moyo $
+ * @version $Id: update_0841_0843.php 22661 2014-02-13 16:30:39Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
- Copyright (C) 2003-2013 by the INDEPNET Development Team.
+ Copyright (C) 2003-2014 by the INDEPNET Development Team.
 
  http://indepnet.net/   http://glpi-project.org
  -------------------------------------------------------------------------
@@ -97,8 +97,8 @@ function update0841to0843() {
 
             if (isset($options['field'])) {
                // update ticket statuses
-               if (($data['itemtype'] = 'Ticket'
-                  || $data['itemtype'] = 'Problem')
+               if (($data['itemtype'] == 'Ticket'
+                  || $data['itemtype'] == 'Problem')
                      && $data['type'] == Bookmark::SEARCH) {
                   foreach ($options['field'] as $key => $val) {
                      if ($val == 12 && isset($options['contains'][$key])) {
@@ -110,8 +110,8 @@ function update0841to0843() {
                }
 
                // Fix computer / allassets bookmarks : 17 -> 7 / 18 -> 8 / 7 -> 17
-               if (($data['itemtype'] = 'Computer'
-                  || $data['itemtype'] = 'AllAssets')
+               if (($data['itemtype'] == 'Computer'
+                  || $data['itemtype'] == 'AllAssets')
                      && $data['type'] == Bookmark::SEARCH) {
                   foreach ($options['field'] as $key => $val) {
                      switch ($val) {

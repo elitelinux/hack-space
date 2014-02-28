@@ -1,9 +1,9 @@
 <?php
 /*
- * @version $Id: search.class.php 22513 2014-01-22 12:26:09Z moyo $
+ * @version $Id: search.class.php 22668 2014-02-14 22:13:51Z ddurieux $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
- Copyright (C) 2003-2013 by the INDEPNET Development Team.
+ Copyright (C) 2003-2014 by the INDEPNET Development Team.
 
  http://indepnet.net/   http://glpi-project.org
  -------------------------------------------------------------------------
@@ -3726,7 +3726,8 @@ class Search {
                   return " $LINK `glpi_computers_softwareversions`
                                     AS glpi_computers_softwareversions_$to_type
                               ON (`glpi_computers_softwareversions_$to_type`.`computers_id`
-                                       = `glpi_computers`.`id`)
+                                       = `glpi_computers`.`id`
+                                  AND `glpi_computers_softwareversions_$to_type`.`is_deleted` = '0')
                            $LINK `glpi_softwareversions` AS glpi_softwareversions_$to_type
                               ON (`glpi_computers_softwareversions_$to_type`.`softwareversions_id`
                                        = `glpi_softwareversions_$to_type`.`id`)
@@ -3812,7 +3813,8 @@ class Search {
                            $LINK `glpi_computers_softwareversions`
                                     AS glpi_computers_softwareversions_$to_type
                               ON (`glpi_computers_softwareversions_$to_type`.`softwareversions_id`
-                                       = `glpi_softwareversions_$to_type`.`id`)
+                                       = `glpi_softwareversions_$to_type`.`id`
+                                  AND `glpi_computers_softwareversions_$to_type`.`is_deleted` = '0')
                            $LINK `glpi_computers`
                               ON (`glpi_computers_softwareversions_$to_type`.`computers_id`
                                        = `glpi_computers`.`id` ".

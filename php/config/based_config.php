@@ -1,9 +1,9 @@
 <?php
 /*
- * @version $Id: based_config.php 21915 2013-10-02 06:31:54Z moyo $
+ * @version $Id: based_config.php 22657 2014-02-12 16:17:54Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
- Copyright (C) 2003-2013 by the INDEPNET Development Team.
+ Copyright (C) 2003-2014 by the INDEPNET Development Team.
 
  http://indepnet.net/   http://glpi-project.org
  -------------------------------------------------------------------------

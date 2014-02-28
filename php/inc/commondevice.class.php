@@ -1,9 +1,9 @@
 <?php
 /*
- * @version $Id: commondevice.class.php 20851 2013-04-29 09:25:34Z moyo $
+ * @version $Id: commondevice.class.php 22657 2014-02-12 16:17:54Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
- Copyright (C) 2003-2013 by the INDEPNET Development Team.
+ Copyright (C) 2003-2014 by the INDEPNET Development Team.
 
  http://indepnet.net/   http://glpi-project.org
  -------------------------------------------------------------------------

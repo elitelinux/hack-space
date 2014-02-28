@@ -1,9 +1,9 @@
 <?php
 /*
- * @version $Id: user.class.php 22441 2014-01-15 08:04:25Z moyo $
+ * @version $Id: user.class.php 22693 2014-02-26 08:56:04Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
- Copyright (C) 2003-2013 by the INDEPNET Development Team.
+ Copyright (C) 2003-2014 by the INDEPNET Development Team.
 
  http://indepnet.net/   http://glpi-project.org
  -------------------------------------------------------------------------
@@ -1786,6 +1786,11 @@ class User extends CommonDBTM {
 
       if (empty($ID)) {
          echo "<tr class='tab_bg_1'>";
+         echo "<th colspan='2'>"._n('Authorization','Authorizations',1)."</th>";
+         echo "<td>" .  __('Recursive') . "</td><td>";
+         Dropdown::showYesNo("_is_recursive",0);
+         echo "</td></tr>";      
+         echo "<tr class='tab_bg_1'>";
          echo "<td>" .  __('Profile') . "</td><td>";
          Profile::dropdownUnder(array('name'  => '_profiles_id',
                                       'value' => Profile::getDefault()));
@@ -1795,6 +1800,7 @@ class User extends CommonDBTM {
                                 'display_emptychoice' => false,
                                 'entity'              => $_SESSION['glpiactiveentities']));
          echo "</td></tr>";
+
       } else {
          if ($caneditpassword) {
             echo "<tr class='tab_bg_1'>";
@@ -3325,7 +3331,7 @@ class User extends CommonDBTM {
     * @param $login
    **/
    static function getIdByName($login) {
-      self::getIdByField('name', $login);
+      return self::getIdByField('name', $login);
    }
 
 

@@ -1,9 +1,9 @@
 <?php
 /*
- * @version $Id: migration_cleaner.php 20314 2013-02-27 14:30:24Z moyo $
+ * @version $Id: migration_cleaner.php 22657 2014-02-12 16:17:54Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
- Copyright (C) 2003-2013 by the INDEPNET Development Team.
+ Copyright (C) 2003-2014 by the INDEPNET Development Team.
 
  http://indepnet.net/   http://glpi-project.org
  -------------------------------------------------------------------------

@@ -1,9 +1,9 @@
 <?php
 /*
- * @version $Id: software.class.php 22006 2013-10-16 09:56:28Z moyo $
+ * @version $Id: software.class.php 22666 2014-02-14 21:43:39Z ddurieux $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
- Copyright (C) 2003-2013 by the INDEPNET Development Team.
+ Copyright (C) 2003-2014 by the INDEPNET Development Team.
 
  http://indepnet.net/   http://glpi-project.org
  -------------------------------------------------------------------------
@@ -508,6 +508,7 @@ class Software extends CommonDBTM {
       if (Session::getLoginUserID()) {
          $tab[72]['joinparams']  = array('jointype'   => 'child',
                                          'condition'  => "AND NEWTABLE.`is_deleted_computer` = '0'
+                                                          AND NEWTABLE.`is_deleted` = '0'
                                                           AND NEWTABLE.`is_template_computer` = '0'
                                                           ".getEntitiesRestrictRequest('AND', 'NEWTABLE'),
                                          'beforejoin' => array('table' => 'glpi_softwareversions',

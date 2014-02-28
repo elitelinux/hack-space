@@ -1,9 +1,9 @@
 <?php
 /*
- * @version $Id: ruleimportentity.class.php 20149 2013-02-06 19:07:28Z moyo $
+ * @version $Id: ruleimportentity.class.php 22696 2014-02-26 09:53:21Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
- Copyright (C) 2003-2013 by the INDEPNET Development Team.
+ Copyright (C) 2003-2014 by the INDEPNET Development Team.
 
  http://indepnet.net/   http://glpi-project.org
  -------------------------------------------------------------------------
@@ -79,7 +79,7 @@ class RuleImportEntity extends Rule {
                      }
                      if ($res != null) {
                         //Get the entity associated with the TAG
-                        $target_entity = Entity::getEntityIDByTag($res);
+                        $target_entity = Entity::getEntityIDByTag(addslashes($res));
                         if ($target_entity != '') {
                            $output["entities_id"] = $target_entity;
                         }

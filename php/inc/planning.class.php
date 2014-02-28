@@ -1,9 +1,9 @@
 <?php
 /*
- * @version $Id: planning.class.php 21566 2013-08-27 08:18:02Z moyo $
+ * @version $Id: planning.class.php 22657 2014-02-12 16:17:54Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
- Copyright (C) 2003-2013 by the INDEPNET Development Team.
+ Copyright (C) 2003-2014 by the INDEPNET Development Team.
 
  http://indepnet.net/   http://glpi-project.org
  -------------------------------------------------------------------------

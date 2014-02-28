@@ -1,9 +1,9 @@
 <?php
 /*
- * @version $Id: ruleright.class.php 21328 2013-07-19 07:30:09Z moyo $
+ * @version $Id: ruleright.class.php 22696 2014-02-26 09:53:21Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
- Copyright (C) 2003-2013 by the INDEPNET Development Team.
+ Copyright (C) 2003-2014 by the INDEPNET Development Team.
 
  http://indepnet.net/   http://glpi-project.org
  -------------------------------------------------------------------------
@@ -124,11 +124,9 @@ class RuleRight extends Rule {
       $is_recursive = 0;
       $continue     = true;
       $output_src   = $output;
-
       if (count($this->actions)) {
          $entity = array();
          foreach ($this->actions as $action) {
-
             switch ($action->fields["action_type"]) {
                case "assign" :
                   switch ($action->fields["field"]) {
@@ -167,20 +165,20 @@ class RuleRight extends Rule {
                            if ($res != null) {
                               switch ($action->fields["field"]) {
                                  case "_affect_entity_by_dn" :
-                                    $entity_found = Entity::getEntityIDByDN($res);
+                                    $entity_found = Entity::getEntityIDByDN(addslashes($res));
                                     break;
 
                                  case "_affect_entity_by_tag" :
-                                    $entity_found = Entity::getEntityIDByTag($res);
+                                    $entity_found = Entity::getEntityIDByTag(addslashes($res));
                                     break;
 
                                  case "_affect_entity_by_domain" :
-                                    $entity_found = Entity::getEntityIDByDomain($res);
+                                    $entity_found = Entity::getEntityIDByDomain(addslashes($res));
                                     break;
 
                                  case "_affect_entity_by_completename" :
                                     $res          = Toolbox::unclean_cross_side_scripting_deep($res);
-                                    $entity_found = Entity::getEntityIDByCompletename($res);
+                                    $entity_found = Entity::getEntityIDByCompletename(addslashes($res));
                                     break;
 
                                  default:

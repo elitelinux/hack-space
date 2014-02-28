@@ -1,9 +1,9 @@
 <?php
 /*
- * @version $Id: update_0831_0833.php 21003 2013-05-22 17:36:20Z yllen $
+ * @version $Id: update_0831_0833.php 22657 2014-02-12 16:17:54Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
- Copyright (C) 2003-2013 by the INDEPNET Development Team.
+ Copyright (C) 2003-2014 by the INDEPNET Development Team.
 
  http://indepnet.net/   http://glpi-project.org
  -------------------------------------------------------------------------

@@ -1,9 +1,9 @@
 <?php
 /*
- * @version $Id: transfer.class.php 22179 2013-11-15 12:20:41Z yllen $
+ * @version $Id: transfer.class.php 22692 2014-02-26 08:49:43Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
- Copyright (C) 2003-2013 by the INDEPNET Development Team.
+ Copyright (C) 2003-2014 by the INDEPNET Development Team.
 
  http://indepnet.net/   http://glpi-project.org
  -------------------------------------------------------------------------
@@ -980,21 +980,6 @@ class Transfer extends CommonDBTM {
                $this->transferSoftwareLicensesAndVersions($ID);
             }
 
-            if ($itemtype == 'Computer') {
-               // Monitor Direct Connect : keep / delete + clean unused / keep unused
-               $this->transferDirectConnection($itemtype, $ID, 'Monitor');
-               // Peripheral Direct Connect : keep / delete + clean unused / keep unused
-               $this->transferDirectConnection($itemtype, $ID, 'Peripheral');
-               // Phone Direct Connect : keep / delete + clean unused / keep unused
-               $this->transferDirectConnection($itemtype, $ID, 'Phone');
-               // Printer Direct Connect : keep / delete + clean unused / keep unused
-               $this->transferDirectConnection($itemtype, $ID, 'Printer');
-               // License / Software :  keep / delete + clean unused / keep unused
-               $this->transferComputerSoftwares($ID);
-               // Computer Disks :  delete them or not ?
-               $this->transferComputerDisks($ID);
-            }
-
             // Connected item is transfered
             if (in_array($itemtype, $CFG_GLPI["directconnect_types"])) {
                $this->manageConnectionComputer($itemtype, $ID);
@@ -1056,6 +1041,23 @@ class Transfer extends CommonDBTM {
 
             $item->update($input);
             $this->addToAlreadyTransfer($itemtype,$ID,$newID);
+
+            // Do it after item transfer for entity checks
+            if ($itemtype == 'Computer') {
+               // Monitor Direct Connect : keep / delete + clean unused / keep unused
+               $this->transferDirectConnection($itemtype, $ID, 'Monitor');
+               // Peripheral Direct Connect : keep / delete + clean unused / keep unused
+               $this->transferDirectConnection($itemtype, $ID, 'Peripheral');
+               // Phone Direct Connect : keep / delete + clean unused / keep unused
+               $this->transferDirectConnection($itemtype, $ID, 'Phone');
+               // Printer Direct Connect : keep / delete + clean unused / keep unused
+               $this->transferDirectConnection($itemtype, $ID, 'Printer');
+               // License / Software :  keep / delete + clean unused / keep unused
+               $this->transferComputerSoftwares($ID);
+               // Computer Disks :  delete them or not ?
+               $this->transferComputerDisks($ID);
+            }
+            
             Plugin::doHook("item_transfer", array('type'        => $itemtype,
                                                   'id'          => $ID,
                                                   'newID'       => $newID,
@@ -1503,7 +1505,6 @@ class Transfer extends CommonDBTM {
                          WHERE `softwares_id` = '$newsoftID'
                                AND `name` = '".addslashes($license->fields['name'])."'
                                AND `serial` = '".addslashes($license->fields['serial'])."'";
-
                $newlicID = -1;
                if ($result = $DB->query($query)) {
                   //// If exists : increment number by 1
@@ -1512,7 +1513,6 @@ class Transfer extends CommonDBTM {
                      $newlicID = $data['id'];
                      $license->update(array('id'     => $data['id'],
                                             'number' => $data['number']+1));
-
                   } else {
                      //// If not exists : create with number = 1
                      $input = $license->fields;

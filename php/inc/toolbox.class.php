@@ -1,9 +1,9 @@
 <?php
 /*
- * @version $Id: toolbox.class.php 21949 2013-10-06 06:30:55Z remi $
+ * @version $Id: toolbox.class.php 22663 2014-02-14 11:00:52Z yllen $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
- Copyright (C) 2003-2013 by the INDEPNET Development Team.
+ Copyright (C) 2003-2014 by the INDEPNET Development Team.
 
  http://indepnet.net/   http://glpi-project.org
  -------------------------------------------------------------------------
@@ -390,6 +390,7 @@ class Toolbox {
 
       $config             = array('safe'=>1);
       $config["elements"] = "*+iframe";
+      $config["direct_list_nest"] = 1;
       $value              = htmLawed($value, $config);
 
       return $value;

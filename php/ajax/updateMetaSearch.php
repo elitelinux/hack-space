@@ -1,9 +1,9 @@
 <?php
 /*
- * @version $Id: updateMetaSearch.php 20693 2013-04-09 12:59:31Z moyo $
+ * @version $Id: updateMetaSearch.php 22657 2014-02-12 16:17:54Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
- Copyright (C) 2003-2013 by the INDEPNET Development Team.
+ Copyright (C) 2003-2014 by the INDEPNET Development Team.
 
  http://indepnet.net/   http://glpi-project.org
  -------------------------------------------------------------------------

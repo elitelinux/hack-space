@@ -1,9 +1,9 @@
 <?php
 /*
- * @version $Id: update.php 22452 2014-01-15 13:41:45Z moyo $
+ * @version $Id: update.php 22699 2014-02-26 10:28:14Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
- Copyright (C) 2003-2013 by the INDEPNET Development Team.
+ Copyright (C) 2003-2014 by the INDEPNET Development Team.
 
  http://indepnet.net/   http://glpi-project.org
  -------------------------------------------------------------------------
@@ -743,6 +743,7 @@ function updateDbUpTo031() {
          update0843to0844();
 
       case "0.84.4" :
+      case "0.84.5" :
          break;
 
       default :
@@ -774,7 +775,7 @@ function updateDbUpTo031() {
 
    // Update version number and default langage and new version_founded ---- LEAVE AT THE END
    $query = "UPDATE `glpi_configs`
-             SET `version` = ' 0.84.4',
+             SET `version` = ' 0.84.5',
                  `language` = '".$glpilanguage."',
                  `founded_new_version` = ''";
    $DB->queryOrDie($query);

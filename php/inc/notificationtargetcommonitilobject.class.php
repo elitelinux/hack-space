@@ -1,9 +1,9 @@
 <?php
 /*
- * @version $Id: notificationtargetcommonitilobject.class.php 22466 2014-01-17 14:49:31Z yllen $
+ * @version $Id: notificationtargetcommonitilobject.class.php 22698 2014-02-26 10:18:53Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
- Copyright (C) 2003-2013 by the INDEPNET Development Team.
+ Copyright (C) 2003-2014 by the INDEPNET Development Team.
 
  http://indepnet.net/   http://glpi-project.org
  -------------------------------------------------------------------------
@@ -342,7 +342,17 @@ abstract class NotificationTargetCommonITILObject extends NotificationTarget {
    function getTaskAuthor($options=array()) {
       global $DB;
 
-      if (isset($options['task_id'])) {
+      // In case of delete task pass user id
+      if (isset($options['task_users_id'])) {
+         $query = $this->getDistinctUserSql()."
+                  FROM `glpi_users` ".
+                  $this->getProfileJoinSql()."
+                  WHERE `glpi_users`.`id` = '".$options['task_users_id']."'";
+
+         foreach ($DB->request($query) as $data) {
+            $this->addToAddressesList($data);
+         }
+      } else if (isset($options['task_id'])) {
          $tasktable = getTableForItemType($this->obj->getType().'Task');
 
          $query = $this->getDistinctUserSql()."
@@ -366,7 +376,17 @@ abstract class NotificationTargetCommonITILObject extends NotificationTarget {
    function getTaskAssignUser($options=array()) {
       global $DB;
 
-      if (isset($options['task_id'])) {
+      // In case of delete task pass user id
+      if (isset($options['task_users_id_tech'])) {
+         $query = $this->getDistinctUserSql()."
+                  FROM `glpi_users` ".
+                  $this->getProfileJoinSql()."
+                  WHERE `glpi_users`.`id` = '".$options['task_users_id_tech']."'";
+
+         foreach ($DB->request($query) as $data) {
+            $this->addToAddressesList($data);
+         }
+      } else if (isset($options['task_id'])) {
          $tasktable = getTableForItemType($this->obj->getType().'Task');
 
          $query = $this->getDistinctUserSql()."
@@ -700,6 +720,7 @@ abstract class NotificationTargetCommonITILObject extends NotificationTarget {
                }
 
                $tmp['##author.email##']  = $user_tmp->getDefaultEmail();
+               $tmp['##author.mobile##'] = $user_tmp->getField('mobile');
                $tmp['##author.phone##']  = $user_tmp->getField('phone');
                $tmp['##author.phone2##'] = $user_tmp->getField('phone2');
                $datas['authors'][]       = $tmp;
@@ -897,6 +918,7 @@ abstract class NotificationTargetCommonITILObject extends NotificationTarget {
                     'author.id'                         => __('Requester ID'),
                     'author.name'                       => __('Requester'),
                     'author.location'                   => __('Requester location'),
+                    'author.mobile'                     => __('Mobile phone'),
                     'author.phone'                      => __('Phone'),
                     'author.phone2'                     => __('Phone 2'),
                     'author.email'                      => _n('Email', 'Emails', 1),

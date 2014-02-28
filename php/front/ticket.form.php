@@ -1,9 +1,9 @@
 <?php
 /*
- * @version $Id: ticket.form.php 20483 2013-03-20 11:19:53Z tsmr $
+ * @version $Id: ticket.form.php 22657 2014-02-12 16:17:54Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
- Copyright (C) 2003-2013 by the INDEPNET Development Team.
+ Copyright (C) 2003-2014 by the INDEPNET Development Team.
 
  http://indepnet.net/   http://glpi-project.org
  -------------------------------------------------------------------------
@@ -129,7 +129,13 @@ if (isset($_POST["add"])) {
    Event::log($_POST['tickets_id'], "ticket", 4, "tracking",
               //TRANS: %s is the user login
               sprintf(__('%s deletes an actor'), $_SESSION["glpiname"]));
-   Html::redirect($CFG_GLPI["root_doc"]."/front/ticket.form.php?id=".$_POST['tickets_id']);
+
+   if ($track->can($_POST["id"],'r')) {
+      Html::redirect($CFG_GLPI["root_doc"]."/front/ticket.form.php?id=".$_POST["tickets_id"]);
+   }
+   Session::addMessageAfterRedirect(__('You have been redirected because you no longer have access to this item'),
+                                    true, ERROR);
+   Html::redirect($CFG_GLPI["root_doc"]."/front/ticket.php");
 
 } else if (isset($_POST['delete_group'])) {
    $group_ticket = new Group_Ticket();
@@ -138,7 +144,14 @@ if (isset($_POST["add"])) {
 
    Event::log($_POST['tickets_id'], "ticket", 4, "tracking",
               sprintf(__('%s deletes an actor'), $_SESSION["glpiname"]));
-   Html::redirect($CFG_GLPI["root_doc"]."/front/ticket.form.php?id=".$_POST['tickets_id']);
+
+   if ($track->can($_POST["id"],'r')) {
+      Html::redirect($CFG_GLPI["root_doc"]."/front/ticket.form.php?id=".$_POST["tickets_id"]);
+   }
+   Session::addMessageAfterRedirect(__('You have been redirected because you no longer have access to this item'),
+                                    true, ERROR);
+   Html::redirect($CFG_GLPI["root_doc"]."/front/ticket.php");
+
 
 } else if (isset($_POST['delete_supplier'])) {
    $supplier_ticket = new Supplier_Ticket();
