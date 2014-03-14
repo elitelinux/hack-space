@@ -1,0 +1,225 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Helpdeskrating\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-20 12:09+0100\n"
+"PO-Revision-Date: 2013-03-20 12:10+0100\n"
+"Last-Translator: Christian \"ThorBhaal\" Deinert <ThorBhaal@googlemail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-SearchPath-1: ../front\n"
+"X-Poedit-SearchPath-2: ../inc\n"
+
+#: ../inc/helpdeskrating.class.php:176
+#: ../inc/notificationtargethelpdeskrating.class.php:67
+msgid "Helpdeskrating"
+msgstr "Helpdeskrating"
+
+#: ../inc/helpdeskrating.class.php:334
+#: ../inc/helpdeskrating.class.php:394
+#: ../inc/helpdeskrating.class.php:547
+#: ../inc/notificationtargethelpdeskrating.class.php:68
+msgid "Rating of the Ticket (1=best, 6=worst)"
+msgstr "Bewertung des Tickets (in Schulnoten)"
+
+#: ../inc/helpdeskrating.class.php:345
+#: ../inc/helpdeskrating.class.php:405
+#: ../inc/helpdeskrating.class.php:558
+#: ../inc/notificationtargethelpdeskrating.class.php:73
+#: ../inc/statistic.class.php:191
+#: ../inc/statistic.class.php:251
+#: ../inc/statistic.class.php:490
+msgid "Overall satisfaction"
+msgstr "Gesamtzufriedenheit"
+
+#: ../inc/helpdeskrating.class.php:353
+#: ../inc/helpdeskrating.class.php:425
+#: ../inc/helpdeskrating.class.php:578
+#: ../inc/notificationtargethelpdeskrating.class.php:74
+#: ../inc/statistic.class.php:252
+#: ../inc/statistic.class.php:491
+msgid "Satisfaction with the solution"
+msgstr "Zufriedenheit mit der Lösung"
+
+#: ../inc/helpdeskrating.class.php:361
+#: ../inc/helpdeskrating.class.php:445
+#: ../inc/helpdeskrating.class.php:598
+#: ../inc/notificationtargethelpdeskrating.class.php:75
+#: ../inc/statistic.class.php:253
+#: ../inc/statistic.class.php:492
+msgid "Satisfaction with the technician"
+msgstr "Zufriedenheit mit dem Techniker"
+
+#: ../inc/helpdeskrating.class.php:369
+#: ../inc/helpdeskrating.class.php:465
+#: ../inc/helpdeskrating.class.php:618
+msgid "Satisfaction with the chronological sequence<br />(e.g. adherence to a appointed time-limit)"
+msgstr "Zufriedenheit mit dem zeitlichen Verlauf<br />(z.B. einhaltung vereinbarter Termine)"
+
+#: ../inc/helpdeskrating.class.php:377
+#: ../inc/helpdeskrating.class.php:485
+#: ../inc/helpdeskrating.class.php:531
+#: ../inc/helpdeskrating.class.php:638
+#: ../inc/helpdeskrating.class.php:719
+msgid "Comment (optional)"
+msgstr "Kommentar (optional)"
+
+#: ../inc/helpdeskrating.class.php:381
+#: ../inc/helpdeskrating.class.php:535
+msgid "Save"
+msgstr "Speichern"
+
+#: ../inc/helpdeskrating.class.php:491
+#: ../inc/helpdeskrating.class.php:644
+#: ../inc/helpdeskrating.class.php:724
+msgid "Date of rating: "
+msgstr "Bewertet am "
+
+#: ../inc/helpdeskrating.class.php:493
+#: ../inc/helpdeskrating.class.php:646
+#: ../inc/helpdeskrating.class.php:726
+msgid "Not rated yet"
+msgstr "Noch nicht Bewertet"
+
+#: ../inc/helpdeskrating.class.php:507
+#: ../inc/helpdeskrating.class.php:658
+#: ../inc/notificationtargethelpdeskrating.class.php:77
+msgid "Satisfaction with the communication"
+msgstr "Zufriedenheit mit der Kommunikation"
+
+#: ../inc/helpdeskrating.class.php:515
+#: ../inc/helpdeskrating.class.php:678
+#: ../inc/notificationtargethelpdeskrating.class.php:78
+msgid "Satisfaction with the guidelines/specifications by the user"
+msgstr "Zufriedenheit mit den Vorgaben des Users"
+
+#: ../inc/helpdeskrating.class.php:523
+#: ../inc/helpdeskrating.class.php:698
+#: ../inc/notificationtargethelpdeskrating.class.php:79
+msgid "How cooperative was the user"
+msgstr "Zufriedenheit mit der Mitarbeit des Users"
+
+#: ../inc/helpdeskrating.class.php:538
+msgid "Rating is possible if the ticket is solved or closed"
+msgstr "Bewertung ist erst nach Abschluss des Tickets möglich"
+
+#: ../inc/helpdeskrating.class.php:656
+msgid "Rating of the technician"
+msgstr "Bewertung durch den Techniker"
+
+#: ../inc/helpdeskrating.class.php:733
+msgid "Is the user allowed to see the rating?"
+msgstr "Darf der User die Bewertung sehen?"
+
+#: ../inc/helpdeskrating.class.php:737
+msgid "No"
+msgstr "Nein"
+
+#: ../inc/helpdeskrating.class.php:742
+#: ../inc/helpdeskrating.class.php:750
+msgid "change"
+msgstr "ändern"
+
+#: ../inc/helpdeskrating.class.php:745
+msgid "Yes"
+msgstr "Ja"
+
+#: ../inc/notificationtargethelpdeskrating.class.php:51
+#: ../inc/notificationtargethelpdeskrating.class.php:70
+msgid "Ticket was rated by the User"
+msgstr "Ticket wurde vom User bewertet"
+
+#: ../inc/notificationtargethelpdeskrating.class.php:52
+#: ../inc/notificationtargethelpdeskrating.class.php:71
+msgid "Ticket was rated by the Technician"
+msgstr "Ticket wurde vom Techniker bewertet"
+
+#: ../inc/notificationtargethelpdeskrating.class.php:69
+msgid "Ticket was rated"
+msgstr "Ticket wurde bewertet"
+
+#: ../inc/notificationtargethelpdeskrating.class.php:72
+msgid "Comment"
+msgstr "Kommentar"
+
+#: ../inc/notificationtargethelpdeskrating.class.php:76
+#: ../inc/statistic.class.php:254
+#: ../inc/statistic.class.php:493
+msgid "Satisfaction with the chronological sequence"
+msgstr "Zufriedenheit mit dem zeitlichen Verlauf"
+
+#: ../inc/statistic.class.php:81
+msgid "Ratings all time"
+msgstr "Gesamtbewertung"
+
+#: ../inc/statistic.class.php:82
+msgid "Ratings over time"
+msgstr "Bewertungen über die Zeit"
+
+#: ../inc/statistic.class.php:83
+msgid "Comments"
+msgstr "Kommentare"
+
+#: ../inc/statistic.class.php:84
+msgid "Status spreading"
+msgstr "Statusverteilung"
+
+#: ../inc/statistic.class.php:132
+msgid "Alltime rating"
+msgstr "Gesamtbewertung"
+
+#: ../inc/statistic.class.php:162
+msgid "Progress of the ratings over time"
+msgstr "Verlauf der Bewertungen über die Zeit"
+
+#: ../inc/statistic.class.php:193
+msgid "Comment by user"
+msgstr "Kommentar des Users"
+
+#: ../inc/statistic.class.php:195
+msgid "Comment by technician"
+msgstr "Kommentar des Technikers"
+
+#: ../inc/statistic.class.php:216
+msgid "Spreading of the statuses"
+msgstr "Statusverteilung"
+
+#: ../inc/statistic.class.php:337
+msgid "Rating by the user"
+msgstr "Bewertungen der User"
+
+#: ../inc/statistic.class.php:338
+msgid "Rating by the technician"
+msgstr "Bewertung durch den Techniker"
+
+#: ../inc/statistic.class.php:347
+#: ../inc/statistic.class.php:363
+#: ../inc/statistic.class.php:364
+#: ../inc/statistic.class.php:438
+msgid "in progress"
+msgstr "in arbeit"
+
+#: ../inc/statistic.class.php:348
+#: ../inc/statistic.class.php:365
+#: ../inc/statistic.class.php:439
+msgid "closed"
+msgstr "abgeschlossen"
+
+#: ../inc/statistic.class.php:349
+#: ../inc/statistic.class.php:366
+#: ../inc/statistic.class.php:440
+msgid "rated"
+msgstr "bewertet"
+
+#: ../inc/statistic.class.php:352
+#: ../inc/statistic.class.php:504
+msgid "no data available"
+msgstr "Keine Daten vorhanden"
+

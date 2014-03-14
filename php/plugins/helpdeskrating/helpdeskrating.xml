@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   <name>Helpdeskrating</name>
+   <key>helpdeskrating</key>
+   <state>stable</state>
+   <logo>http://a.fsdn.com/allura/p/helpdeskrating/icon.png</logo>
+   <description>
+      <short>
+         <fr><![CDATA[Helpdeskrating vous permet de travaux d'assistance taux.]]></fr>
+         <en><![CDATA[Helpdeskrating allows you to rate assistance work.]]></en>
+      </short>
+      <long>
+         <fr><![CDATA[Helpdeskrating étend le service d'assistance billets dans un nouvel onglet. Ici, le travail du technicien peut être classé en 4 différentes
+catégories (général, sollution, technicien, temps) avec les points 1 à 6, où 1 est le meilleur et 6 est le pire. <br /> A son tour, le technicien peut également évaluer la communication du demandeur, l'entrée et la collaboration, également avec des points de 1 à 6. <br /> additionnel à ce que le demandeur et le technicien ont la possibilité d'ajouter un commentaire à la note, pour expliquer les points donnés, si nécessaire. <br /> la note est possible dès que le billet sera résolu .]]></fr>
+         <en><![CDATA[Helpdeskrating extends the helpdesk tickets with a new tab. Here the work of the technician can be rated in 4 different
+categories (overall, sollution, technician, time) with points from 1 to 6, where 1 is best and 6 is worst.<br />In turn the technician can also rate the requester's communication, input and collaboration, also with points from 1 to 6.<br />Additional to that the requester and the technician have the possibillity to add a comment to their rating, to explain the given points, if needed.<br />The rating is possible as soon as the ticket is solved.]]></en>
+      </long>
+   </description>
+   <homepage>http://sourceforge.net/projects/helpdeskrating/</homepage>
+   <download>http://sourceforge.net/projects/helpdeskrating/files/</download>
+   <authors>
+      <author>Christian Deinert</author>
+   </authors>
+   <versions>
+      <version>
+          <num>1.1.0</num>
+          <compatibility>0.84</compatibility>
+      </version>
+      <version>
+          <num>1.0.0</num>
+          <compatibility>0.83.3</compatibility>
+      </version>
+   </versions>
+   <langs>
+      <lang>de_DE</lang>
+      <lang>en_GB</lang>
+   </langs>
+   <license><![CDATA[LGPL v3]]></license>
+   <tags>
+         <fr>
+            <tag>Helpdesk</tag>
+            <tag>classement</tag>
+         </fr>
+         <en>
+            <tag>Helpdesk</tag>
+            <tag>Rating</tag>
+         </en>
+   </tags>
+</root>
+
