@@ -1,0 +1,298 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: GLPI Project - archires plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-05 17:26+0200\n"
+"PO-Revision-Date: 2013-09-05 15:25+0000\n"
+"Last-Translator: Nelly Mahu-Lasson <nini.lasson@orange.fr>\n"
+"Language-Team: Spanish (Spain) (http://www.transifex.com/projects/p/glpi-project-archires-plugin/language/es_ES/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_ES\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: hook.php:161
+msgid "1.4 add glpi_plugin_archires_color "
+msgstr ""
+
+#: hook.php:174
+msgid "1.4 add glpi_plugin_archires_profiles "
+msgstr ""
+
+#: hook.php:182
+msgid "1.4 insert into glpi_plugin_archires_profiles "
+msgstr ""
+
+#: hook.php:205 hook.php:211
+msgid "1.5 insert into glpi_plugin_archires_profiles "
+msgstr ""
+
+#: hook.php:226
+msgid "1.5 create glpi_plugin_archires_color_state "
+msgstr ""
+
+#: hook.php:246
+msgid "1.5 create glpi_plugin_archires_query_location "
+msgstr ""
+
+#: hook.php:265
+msgid "1.5 create glpi_plugin_archires_query_switch "
+msgstr ""
+
+#: hook.php:284
+msgid "1.5 create glpi_plugin_archires_query_applicatifs "
+msgstr ""
+
+#: hook.php:296
+msgid "1.5 create glpi_plugin_archires_query_type "
+msgstr ""
+
+#: hook.php:321
+msgid "1.5 create glpi_plugin_archires_config "
+msgstr ""
+
+#: hook.php:330
+msgid "1.5 insert into glpi_plugin_archires_config "
+msgstr ""
+
+#: hook.php:356
+msgid "1.5 insert into glpi_displaypreferences "
+msgstr ""
+
+#: hook.php:393
+msgid "1.7.0 create glpi_plugin_archires_color_vlan "
+msgstr ""
+
+#: hook.php:570 hook.php:576 hook.php:582
+msgid "1.8.0 update glpi_plugin_archires_querytypes (querytype) "
+msgstr ""
+
+#: hook.php:627 hook.php:633 hook.php:639
+msgid "1.8.0 delete glpi_displaypreferences (itemtype) "
+msgstr ""
+
+#: hook.php:769 inc/locationquery.class.php:214
+msgid "All root locations"
+msgstr "Todos los lugares principales"
+
+#: hook.php:798 inc/view.class.php:300
+msgid "See numbers"
+msgstr "See numbers"
+
+#: hook.php:800 inc/view.class.php:305
+msgid "See names"
+msgstr "See names"
+
+#: hook.php:824 inc/networkinterfacecolor.class.php:118
+#: inc/networkinterfacecolor.class.php:121 inc/view.class.php:376
+msgid "Type of network"
+msgstr "Tipo de red"
+
+#: setup.php:47
+msgid "Summary"
+msgstr "Summary"
+
+#: setup.php:66 inc/networkequipmentquery.class.php:38
+#: inc/networkequipmentquery.class.php:72
+#: inc/networkequipmentquery.class.php:155 inc/view.class.php:80
+#: inc/view.class.php:265 inc/view.class.php:424 inc/view.class.php:427
+msgid "Network equipment"
+msgid_plural "Network equipments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: setup.php:123 inc/archires.class.php:39
+msgid "Network Architecture"
+msgid_plural "Network Architectures"
+msgstr[0] ""
+msgstr[1] ""
+
+#: setup.php:137
+msgid "This plugin requires GLPI >= 0.84"
+msgstr ""
+
+#: ajax/dropdownValue.php:86
+msgid "All types"
+msgstr "Todoss los tipos"
+
+#: front/config.form.php:139
+msgid "Please activate the plugin"
+msgstr ""
+
+#: inc/appliancequery.class.php:118 inc/locationquery.class.php:123
+#: inc/networkequipmentquery.class.php:118
+msgid "Thanks to specify a default used view"
+msgstr "Thanks to specify a default used view"
+
+#: inc/archires.class.php:87
+msgid "Add view"
+msgstr "Añadir una vista"
+
+#: inc/imageitem.class.php:108
+msgid "Associate pictures with item types"
+msgstr "Asociar las imágenes a los tipos de material"
+
+#: inc/imageitem.class.php:124
+msgid "Some types of items must be created so that the association can exist"
+msgstr "Des types de matériels doivent être créés pour que l'association puisse exister"
+
+#: inc/imageitem.class.php:147 inc/imageitem.class.php:151
+msgid "Picture"
+msgstr "Imagen"
+
+#: inc/locationquery.class.php:73 inc/locationquery.class.php:169
+msgid "Childs"
+msgstr "Hijos"
+
+#: inc/networkinterfacecolor.class.php:119
+#: inc/networkinterfacecolor.class.php:122 inc/statecolor.class.php:121
+#: inc/statecolor.class.php:124 inc/view.class.php:138 inc/view.class.php:370
+#: inc/vlancolor.class.php:122 inc/vlancolor.class.php:125
+msgid "Color"
+msgstr "Color"
+
+#: inc/networkinterfacecolor.class.php:177
+msgid "Associate colors with network types"
+msgstr "Asociar los colores a los tipos de redes"
+
+#: inc/networkinterfacecolor.class.php:183 inc/statecolor.class.php:182
+#: inc/vlancolor.class.php:181
+msgid "Please use this color format"
+msgstr "Utilizar este formato para introducir el color"
+
+#: inc/profile.class.php:38 inc/profile.class.php:129
+msgid "Rights management"
+msgstr "Gestión de los derechos"
+
+#: inc/profile.class.php:135
+msgid "Generate graphs"
+msgstr "Generar un gráfico"
+
+#: inc/prototype.class.php:199
+msgid "Graphviz name"
+msgstr "Nombre Graphviz"
+
+#: inc/prototype.class.php:200 inc/prototype.class.php:258
+msgid "Associated picture"
+msgstr "Imagen asociada"
+
+#: inc/prototype.class.php:201
+msgid "Name of item"
+msgstr "Nombre del material"
+
+#: inc/prototype.class.php:255
+msgid "Graphviz links"
+msgstr "Enlaces Graphviz"
+
+#: inc/prototype.class.php:256
+msgid "IP item 1"
+msgstr "IP material 1"
+
+#: inc/prototype.class.php:257
+msgid "Socket item 1"
+msgstr "Puerto material 2"
+
+#: inc/prototype.class.php:259
+msgid "Socket item 2"
+msgstr "Puerto material 2"
+
+#: inc/prototype.class.php:260
+msgid "IP item 2"
+msgstr "IP material 2"
+
+#: inc/prototype.class.php:315 inc/prototype.class.php:318
+#: inc/prototype.class.php:491 inc/prototype.class.php:513
+msgid "Socket"
+msgstr "Puerto"
+
+#: inc/prototype.class.php:334
+msgid "Test Graphviz"
+msgstr "Probar Graphviz"
+
+#: inc/prototype.class.php:725 inc/view.class.php:332 inc/view.class.php:412
+msgid "Generation"
+msgstr "Generación"
+
+#: inc/querytype.class.php:144
+msgid "Display types of items"
+msgstr "Mostrar los tipos de materiales"
+
+#: inc/statecolor.class.php:175
+msgid "Associate colors with items statuses"
+msgstr "Asociar los colores a los estados de los materiales"
+
+#: inc/statecolor.class.php:217
+msgid "All statuses"
+msgstr "Todos los estados"
+
+#: inc/view.class.php:100 inc/view.class.php:289 inc/view.class.php:455
+#: inc/view.class.php:457
+msgid "Display sockets"
+msgstr "Ver los puertos"
+
+#: inc/view.class.php:105 inc/view.class.php:307 inc/view.class.php:462
+#: inc/view.class.php:464
+msgid "Display IP/Mask"
+msgstr "Ver IP/Máscara"
+
+#: inc/view.class.php:110 inc/view.class.php:313 inc/view.class.php:469
+#: inc/view.class.php:471
+msgid "Display item types"
+msgstr "Ver el tipo de material"
+
+#: inc/view.class.php:115 inc/view.class.php:317 inc/view.class.php:476
+#: inc/view.class.php:478
+msgid "Display item statuses"
+msgstr "Ver el estado del material"
+
+#: inc/view.class.php:120 inc/view.class.php:323 inc/view.class.php:483
+#: inc/view.class.php:485
+msgid "Display item locations"
+msgstr "Ver lugar del material"
+
+#: inc/view.class.php:125 inc/view.class.php:327 inc/view.class.php:490
+#: inc/view.class.php:492
+msgid "Display item entities"
+msgstr "Ver la entidad del material"
+
+#: inc/view.class.php:130 inc/view.class.php:335 inc/view.class.php:505
+msgid "Rendering engine"
+msgstr "Motor de renderizado"
+
+#: inc/view.class.php:134 inc/view.class.php:350 inc/view.class.php:515
+msgid "Image format"
+msgstr "Formato de la imagen"
+
+#: inc/view.class.php:201
+msgid "See all views"
+msgstr "See all views"
+
+#: inc/view.class.php:222
+msgid "Display"
+msgstr "Mostrar"
+
+#: inc/view.class.php:258 inc/view.class.php:410
+msgid "Display of items"
+msgstr "Mostrar los materiales"
+
+#: inc/view.class.php:286 inc/view.class.php:411
+msgid "Display description"
+msgstr "Ver Descripción"
+
+#: inc/view.class.php:348
+msgid "With neato, the sockets will not be displayed"
+msgstr "Con neato, los puertos no serań visibles"
+
+#: inc/vlancolor.class.php:175
+msgid "Associate colors to VLANs"
+msgstr "Associer des couleurs aux VLAN"
+
+#: inc/vlancolor.class.php:217
+msgid "All VLANs"
+msgstr "Tous les VLANs"
