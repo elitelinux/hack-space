@@ -1,0 +1,8 @@
+
+Version 0.3.7:
+
+- In the tickets dashboard with sound you now can chose by entity or group, or a overall list.
+- Minor bugs correction
+
+
+

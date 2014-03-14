@@ -1,0 +1,340 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Stevenes Donato <stevenesdonato@gmail.com>, 2014
+
+msgid ""
+msgstr ""
+"Project-Id-Version: GLPI Project\n"
+"Rebyt-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-08 15:21+0100\n"
+"PO-Revision-Date: 2014-02-08 15:21+0400\n"
+"Last-Translator: Stevenes Donato <stevenesdonato@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_FR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+msgid "Tickets"
+msgstr "Tickets"
+
+msgid "Reports"
+msgstr "Rapports"
+
+msgid "Charts"
+msgstr "Graphiques"
+
+msgid "Home"
+msgstr "Accueil"
+
+msgid "Tickets Statistics"
+msgstr "Statistiques des tickets"
+
+msgid "by Technician"
+msgstr "par technicien"
+
+msgid "by Requester"
+msgstr "par demandeur"
+
+msgid "by Date"
+msgstr "par date"
+
+msgid "Overall"
+msgstr "Global"
+
+msgid "Today"
+msgstr "Aujourd'hui"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "users"
+msgstr "utilisateurs"
+
+msgid "active"
+msgstr "actif"
+
+msgid "Tickets Evolution"
+msgstr "Tickets Evolution"
+
+msgid "Tickets by Status"
+msgstr "Tickets par État"
+
+msgid "Tickets by Entity"
+msgstr "Tickets par l'entité"
+
+msgid "Tickets by Category"
+msgstr "Tickets par catégorie"
+
+msgid "Daily Evolution"
+msgstr "Evolution quotidienne"
+
+msgid "Tickets Total"
+msgstr "Tickets totale"
+
+msgid "by Entity"
+msgstr "par entité"
+
+msgid "TOP 10 - Requester"
+msgstr "TOP 10 - demandeur"
+
+msgid "Entity"
+msgstr "Entité"
+
+msgid "Open Tickets"
+msgstr "Tickets ouverts"
+
+msgid "Today Tickets"
+msgstr "Tickets du jour"
+
+msgid "by Group"
+msgstr "par groupe"
+
+msgid "Group"
+msgstr "Groupe"
+
+msgid "Satisfaction"
+msgstr "Satisfaction"
+
+msgid "Late"
+msgstr "en retard"
+
+msgid "Opened Tickets by Status"
+msgstr "Tickets ouverte par Etat"
+
+msgid "Last Tickets"
+msgstr "Derniers Tickets"
+
+msgid "All"
+msgstr "Tout"
+
+msgid "New version"
+msgstr "Nouvelle version"
+
+msgid "avaliable"
+msgstr "disponible"
+
+msgid "January"
+msgstr "Janvier"
+
+msgid "February"
+msgstr "Février"
+
+msgid "March"
+msgstr "Mars"
+
+msgid "April"
+msgstr "Avril"
+
+msgid "May"
+msgstr "Mai"
+
+msgid "June"
+msgstr "Juin"
+
+msgid "July"
+msgstr "Juillet"
+
+msgid "August"
+msgstr "Août"
+
+msgid "September"
+msgstr "Septembre"
+
+msgid "October"
+msgstr "Octobre"
+
+msgid "November"
+msgstr "Novembre"
+
+msgid "December"
+msgstr "Décembre"
+
+msgid "Sunday"
+msgstr "Dimanche"
+
+msgid "Monday"
+msgstr "Lundi"
+
+msgid "Tuesday"
+msgstr "Mardi"
+
+msgid "Wednesday"
+msgstr "Mercredi"
+
+msgid "Thursday"
+msgstr "Jeudi"
+
+msgid "Friday"
+msgstr "Vendredi"
+
+msgid "Saturday"
+msgstr "Samedi"
+
+msgid "Consult"
+msgstr "Consulter"
+
+msgid "Clean"
+msgstr "Effacer"
+
+msgid "No ticket found"
+msgstr "Aucun billet trouvé"
+
+msgid "Select technician"
+msgstr "Sélectionnez technicien"
+
+msgid "Select requester"
+msgstr "Sélectionnez demandeur"
+
+msgid "Title"
+msgstr "Titre"
+
+msgid "Opening date"
+msgstr "Date d'ouverture"
+
+msgid "Close date"
+msgstr "Date de fermeture"
+
+msgid "Technician"
+msgstr "Technicien"
+
+msgid "Closed"
+msgstr "Fermé"
+
+msgid "Previous"
+msgstr "Précédent"
+
+msgid "Next"
+msgstr "Suivant"
+
+msgid "Requester"
+msgstr "Demandeur"
+
+msgid "Opened"
+msgstr "Ouvert"
+
+msgid "Period"
+msgstr "Période"
+
+msgid "Yesterday"
+msgstr "Hier"
+
+msgid "Last 7 days"
+msgstr "7 derniers jours"
+
+msgid "Last 15 days"
+msgstr "15 derniers jours"
+
+msgid "Last 30 days"
+msgstr "30 derniers jours"
+
+msgid "Last 3 months"
+msgstr "3 derniers mois"
+
+msgid "Select Entity"
+msgstr "Sélectionnez Entité"
+
+msgid "Select Group"
+msgstr "Sélectionnez Groupe"
+
+msgid "Version"
+msgstr "Version"
+
+msgid "Developed by"
+msgstr "Développé par"
+
+msgid "User rights management"
+msgstr "la gestion des droits des utilisateurs"
+
+msgid "Tab display"
+msgstr "affichage de l'onglet"
+
+msgid "Tickets by Source"
+msgstr "Tickets par Origine"
+
+msgid "Last Events"
+msgstr "Derniers Événements"
+
+msgid "Logged Users"
+msgstr "Utilisateurs Enregistrés"
+
+msgid "Computers by Operating System"
+msgstr "Ordinateur par Système"
+
+msgid "Computers by Type"
+msgstr "Ordinateures par Type"
+
+msgid "Quantity"
+msgstr "Montant"
+
+msgid "Monitors by Manufacturer"
+msgstr "Moniteurs par Fabricant"
+
+msgid "Monitors by Model"
+msgstr "Moniteurs par Modèle"
+
+msgid "Printers by Manufacturer"
+msgstr "Imprimantes par Fabricant"
+
+msgid "Printers by Model"
+msgstr "Imprimantes par Modèle"
+
+msgid "Networkequipments by Manufacturer"
+msgstr "Équipements de réseau par Fabricant"
+
+msgid "Networkequipments by Model"
+msgstr "Équipements de réseau par Modèle"
+
+msgid "Phones by Manufacturer"
+msgstr "Téléphones par Fabricant"
+
+msgid "Phones by Model"
+msgstr "Téléphones par Modèle"
+
+msgid "Peripherals by Manufacturer"
+msgstr "Périphériques par Fabricant"
+
+msgid "Peripherals by Model"
+msgstr "Périphériques par Modèle"
+
+msgid "Top 10 - Software Vendors"
+msgstr "Top 10 - Logiciel par Fabricant"
+
+msgid "Top 10 - Software Install"
+msgstr "Top 10 - Logiciel Installation"
+
+msgid "Cartridges by Manufacturer"
+msgstr "Cartouches par Fabricant"
+
+msgid "Used"
+msgstr "Usé"
+
+msgid "Assets by Type"
+msgstr "Atout par Type"
+
+msgid "Unknown"
+msgstr "Inconnu"
+
+msgid "Computer"
+msgstr "Ordinateur"
+
+msgid "Monitor"
+msgstr "Moniteur"
+
+msgid "Printer"
+msgstr "Imprimeur"
+
+msgid "Networkequipment"
+msgstr "Équipements de réseau"
+
+msgid "Phone"
+msgstr "Téléphone"
+
+msgid "Peripheral"
+msgstr "Périphériques"
