@@ -1,0 +1,160 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Immobilizationsheets Development Team
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GLPI - Immobilizationsheets plugin 1.6.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-07 11:39+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: hook.php:128 inc/profile.class.php:142
+msgid "Generate the immobilization sheet"
+msgstr ""
+
+#: setup.php:68 inc/config.class.php:39 inc/item.class.php:40
+msgid "Immobilization sheet"
+msgid_plural "Immobilization sheets"
+msgstr[0] ""
+msgstr[1] ""
+
+#: setup.php:81
+msgid "This plugin requires GLPI >= 0.84"
+msgstr ""
+
+#: front/config.form.php:59
+msgid "Please activate the plugin"
+msgstr ""
+
+#: front/immobilizationsheet.php:51 inc/config.class.php:56
+#: inc/item.class.php:99
+msgid "Generation of immobilization sheet"
+msgstr ""
+
+#: inc/config.class.php:74
+msgid "Options"
+msgstr ""
+
+#: inc/config.class.php:76
+msgid "Save sheets in GLPI"
+msgstr ""
+
+#: inc/config.class.php:81
+msgid "Default Heading for sheets"
+msgstr ""
+
+#: inc/item.class.php:90
+msgid "Save immobilization sheet"
+msgstr ""
+
+#: inc/item.class.php:412
+msgid "IDENTIFICATION IMMOBILIZATION SHEET"
+msgstr ""
+
+#: inc/item.class.php:429
+msgid "I - PART TO BE FILLED BY THE PERSON IN CHARGE FOR THE PURCHASES"
+msgstr ""
+
+#: inc/item.class.php:442
+msgid ""
+"(transfer the original to the administrator network so computer equipement, "
+"the assistant of management in the other cases)"
+msgstr ""
+
+#: inc/item.class.php:463
+msgid "MY ENTERPRISE"
+msgstr ""
+
+#: inc/item.class.php:469
+msgid "COMPUTER IDENTIFICATION"
+msgstr ""
+
+#: inc/item.class.php:475
+msgid "Assignment number (si non informatique)"
+msgstr ""
+
+#: inc/item.class.php:520
+msgid "Assignment (client / inv. …)"
+msgstr ""
+
+#: inc/item.class.php:522
+msgid "Permanent number"
+msgstr ""
+
+#: inc/item.class.php:537 inc/item.class.php:719
+msgid "Trigram and visa of the person in charge"
+msgstr ""
+
+#: inc/item.class.php:553
+msgid "II - PART TO BE FILLED BY THE NETWORK ADMINISTRATOR"
+msgstr ""
+
+#: inc/item.class.php:566
+msgid "(transfer to the assistant of management)"
+msgstr ""
+
+#: inc/item.class.php:582
+msgid "User name / sector"
+msgstr ""
+
+#: inc/item.class.php:590
+msgid "PRINCIPAL ASSIGNMENT"
+msgstr ""
+
+#: inc/item.class.php:600
+msgid "HARDWARE CONFIGURATION"
+msgstr ""
+
+#: inc/item.class.php:617
+msgid "Quantity"
+msgstr ""
+
+#: inc/item.class.php:652
+msgid "Additional cards or peripherals"
+msgstr ""
+
+#: inc/item.class.php:657
+msgid "SOFTWARE CONFIGURATION"
+msgstr ""
+
+#: inc/item.class.php:672
+msgid "Oem/Delivered software"
+msgstr ""
+
+#: inc/item.class.php:735
+msgid "III - PART TO BE FILLED BY THE MANAGEMENT ASSISTANT"
+msgstr ""
+
+#: inc/item.class.php:748
+msgid "(for checking, visa and classification)"
+msgstr ""
+
+#: inc/item.class.php:763
+msgid "CALCULATION OF AMORTIZATION"
+msgstr ""
+
+#: inc/item.class.php:777
+msgid "Base amortization"
+msgstr ""
+
+#: inc/item.class.php:811
+msgid "Date of beginning of amortization"
+msgstr ""
+
+#: inc/item.class.php:827
+msgid "VISA A.G."
+msgstr ""
+
+#: inc/profile.class.php:38 inc/profile.class.php:140
+msgid "Rights management"
+msgstr ""
