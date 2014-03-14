@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Ideabox Development Team
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: GLPI Project - ideabox plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-12-19 11:54+0100\n"
+"PO-Revision-Date: 2012-12-19 11:06+0000\n"
+"Last-Translator: The tsmr <tsmr@thetsmr.fr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: setup.php:81 inc/ideabox.class.php:38
+msgid "Idea box"
+msgid_plural "Ideas box"
+msgstr[0] "Idea box"
+msgstr[1] "Ideas box"
+
+#: setup.php:94
+msgid "This plugin requires GLPI >= 0.84"
+msgstr "This plugin requires GLPI >= 0.84"
+
+#: front/ideabox.php:45
+msgid "Menu"
+msgstr "Menu"
+
+#: front/ideabox.php:49
+msgid "Submit an idea"
+msgstr "Submit an idea"
+
+#: inc/comment.class.php:41
+msgid "Comment"
+msgid_plural "Comments"
+msgstr[0] "Comment"
+msgstr[1] "Comments"
+
+#: inc/comment.class.php:227
+msgid "Idea"
+msgstr "Idea"
+
+#: inc/comment.class.php:247 inc/notificationtargetideabox.class.php:142
+msgid "Associated comment"
+msgid_plural "Associated comments"
+msgstr[0] "Associated comment"
+msgstr[1] "Associated comments"
+
+#: inc/ideabox.class.php:93 inc/ideabox.class.php:189
+msgid "Date of submission"
+msgstr "Date of submission"
+
+#: inc/notificationtargetideabox.class.php:41
+msgid "A new idea has been submitted"
+msgstr "A new idea has been submitted"
+
+#: inc/notificationtargetideabox.class.php:42
+msgid "An idea has been modified"
+msgstr "An idea has been modified"
+
+#: inc/notificationtargetideabox.class.php:43
+msgid "An idea has been deleted"
+msgstr "An idea has been deleted"
+
+#: inc/notificationtargetideabox.class.php:44
+msgid "A comment has been added"
+msgstr "A comment has been added"
+
+#: inc/notificationtargetideabox.class.php:45
+msgid "A comment has been modified"
+msgstr "A comment has been modified"
+
+#: inc/notificationtargetideabox.class.php:46
+msgid "A comment has been deleted"
+msgstr "A comment has been deleted"
+
+#: inc/notificationtargetideabox.class.php:54
+#: inc/notificationtargetideabox.class.php:145
+#: inc/notificationtargetideabox.class.php:166
+msgid "Comment author"
+msgstr "Comment author"
+
+#: inc/notificationtargetideabox.class.php:117
+msgid "Modified fields"
+msgstr "Modified fields"
+
+#: inc/notificationtargetideabox.class.php:175
+msgid "An addition/modification/deletion of comments"
+msgstr "An addition/modification/deletion of comments"
+
+#: inc/notificationtargetideabox.class.php:180
+msgid "An addition/modification/deletion of ideas"
+msgstr "An addition/modification/deletion of ideas"
+
+#: inc/profile.class.php:37 inc/profile.class.php:144
+msgid "Rights management"
+msgstr "Rights management"
+
+#: inc/profile.class.php:149
+msgid "Read - add ideas"
+msgstr "Read - add ideas"
