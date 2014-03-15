@@ -1,0 +1,56 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Routetables Development Team
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GLPI - Routetables plugin 1.5.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-15 10:49+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: hook.php:262
+msgid "Associate with route"
+msgstr ""
+
+#: setup.php:78 inc/profile.class.php:38 inc/routetable.class.php:41
+msgid "Routing table"
+msgid_plural "Routing tables"
+msgstr[0] ""
+msgstr[1] ""
+
+#: setup.php:91
+msgid "This plugin requires GLPI >= 0.84"
+msgstr ""
+
+#: inc/profile.class.php:142
+msgid "Rights management"
+msgstr ""
+
+#: inc/routetable.class.php:81 inc/routetable.class.php:178
+#: inc/routetable_item.class.php:447
+msgid "Metric"
+msgstr ""
+
+#: inc/routetable.class.php:89 inc/routetable.class.php:204
+#: inc/routetable_item.class.php:449
+msgid "Persistance"
+msgstr ""
+
+#: inc/routetable.class.php:316
+msgid "Duplicate"
+msgstr ""
+
+#: inc/routetable_item.class.php:418
+msgctxt "button"
+msgid "Associate a routing table"
+msgstr ""
