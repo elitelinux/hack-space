@@ -1,0 +1,44 @@
+﻿###############
+# Description
+###############
+Winadminpassword - Outil de déploiement de mots de passe uniques pour les systèmes Microsoft Windows et Unix. Les mots de passe générés sont calculés en fonction du numéro de série de la machine et d'une clef secrète. L'avantage de cette méthode est qu'aucun mot de passe n'est stocké dans une base de données.
+
+Plugin GLPI - Vous pouvez afficher les mots de passe générés sur chaque machine composant votre parc. Le plugin récupère la clef secrète dans la base de données de GLPI et le numéro de série de la machine et affiche le mot de passe du compte d'administration de cette dernière.
+
+###############
+# Installation
+###############
+Pré Requis :
+	* GLPI >= 0.83
+
+Installation : 
+	* Décompressez les sources dans le répertoire "Plugins" de votre installation de GLPI
+	* Dans GLPI, dirigez vous dans le menu "Configuration\Plugins", et sélectionnez "Installer" puis "Activer".
+
+Configuration :
+	* Entrez votre clef secrète, utilisée pour la génération des mots de passe de vos comptes d'administration.
+	* Entrez la taille des mots de passe diffusés.
+	* Sélectionnez l'algorithme utilisé pour la génération des mots de passe. (Par défault, WinAdminPassword utilise l'algorithme 1 (Voir le README de WinAdminPassword).
+	* Sélectionnez la couleur d'affichage des mots de passe.
+	* Sélectionnez la taille d'affichage des mots de passe.
+
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+##### Licence
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# WinAdminPassword - A utility to deploy unique passwords for Microsoft Windows and Unix systems. It is based on the serial number of computers and a private key. #
+# The advantage is that no password is stored in a database. #
+# Copyright (C) 2011 Nicolas BOURGES #
+# 
+# This program is free software: you can redistribute it and/or modify #
+# it under the terms of the GNU General Public License as published by #
+# the Free Software Foundation, either version 3 of the License, or #
+# (at your option) any later version. #
+# 
+# This program is distributed in the hope that it will be useful, #
+# but WITHOUT ANY WARRANTY. without even the implied warranty of #
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the #
+# GNU General Public License for more details. #
+#
+# You should have received a copy of the GNU General Public License #
+# along with this program.  If not, see <http://www.gnu.org/licenses/>. #
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
