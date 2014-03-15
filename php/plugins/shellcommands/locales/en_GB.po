@@ -1,0 +1,63 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Routetables Development Team
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: GLPI Project - shellcommands plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-19 14:59+0100\n"
+"PO-Revision-Date: 2013-02-19 14:14+0000\n"
+"Last-Translator: The tsmr <tsmr@thetsmr.fr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: hook.php:131 inc/shellcommand.class.php:99 inc/shellcommand.class.php:163
+#: inc/shellcommandpath.class.php:38
+msgid "Path"
+msgid_plural "Pathes"
+msgstr[0] "Path"
+msgstr[1] "Pathes"
+
+#: hook.php:198
+msgid "Command launch"
+msgstr "Command launch"
+
+#: setup.php:60 inc/shellcommand.class.php:42
+msgid "Shell Command"
+msgid_plural "Shell Commands"
+msgstr[0] "Shell Command"
+msgstr[1] "Shell Commands"
+
+#: front/massiveexec.php:52 inc/shellcommand_item.class.php:593
+msgid "Command"
+msgstr "Command"
+
+#: inc/profile.class.php:38
+msgid "Rights management"
+msgstr "Rights management"
+
+#: inc/shellcommand.class.php:103 inc/shellcommand.class.php:171
+msgid "Windows"
+msgstr "Windows"
+
+#: inc/shellcommand_item.class.php:452
+msgid "Associated Commands"
+msgstr "Associated Commands"
+
+#: inc/shellcommand_item.class.php:674
+msgid "There is an error with socket creation"
+msgstr "There is an error with socket creation"
+
+#: inc/shellcommand_item.class.php:713
+msgid "Magic packet sending to"
+msgstr "Magic packet sending to"
+
+#: inc/shellcommand_item.class.php:715
+msgid "The packet cannot be send"
+msgstr "The packet cannot be send"
