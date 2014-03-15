@@ -1,0 +1,102 @@
+#page {
+
+    margin: 0;
+
+}
+
+#page .rackview_summary {
+
+    text-align: left;
+
+}
+
+.rackview_summary a, .rackview_summary a:visited, .rackview_summary a:link, .rackview_summary a:hover {
+
+    color: black;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 6pt;
+    text-decoration: none;
+
+}
+
+.rackview_rackSummary {
+
+    float: left;
+
+}
+
+.rackview_summary table {
+
+    border-collapse: collapse;
+    width: 20em;
+    font-size: 6pt;
+
+}
+
+.rackview_summary .pagebreak {
+
+    page-break-after: always;
+    clear: both;
+
+}
+
+.rackview_summary td {
+
+    border: 1px solid black;
+    min-width: 5em;
+    text-align: center;
+    line-height: 2em;
+    background-color: #eeeeee;
+
+}
+
+.rackview_summary td.back {
+
+    border: 0;
+    background-color: #bebebe;    
+    line-height: 1em;
+
+}
+
+.rackview_summary td.front {
+
+    border: 0;
+    border-top: 1px solid black;
+    line-height: 1em;
+
+}
+
+.rackview_summary td.rackview_empty {
+
+    background-color: white;
+
+}
+
+.rackview_summary td.rackview_rownumber, th {
+
+    background-color: #5a5a5a;
+    color: white;
+
+}
+
+.rackview_summary table.rackview_depth {
+
+    width: 100%;
+
+}
+
+.rackview_summary th {
+
+    line-height: 2em;
+    text-align: center;
+    border: 1px solid black;
+    font-size: 8pt;
+
+}
+
+.rackview_summary h1, .rackview_summary h2, .rackview_summary ul {
+
+    display: none;
+
+}

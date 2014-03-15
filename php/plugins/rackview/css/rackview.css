@@ -1,0 +1,112 @@
+table.rackview_rack td {
+    text-align: center;
+}
+
+table.rackview_rack td.rackview_empty {
+
+    background-color: white;
+
+}
+
+table.rackview_rack td.rackview_rownumber {
+
+    background-color: lightgrey;
+    color: black;
+    padding: 0px;
+    padding-left: 2px;
+    padding-right: 2px;
+
+}
+
+table.rackview_mini {
+
+    width: 4em;
+    font-size: 4pt;
+    border-spacing: 0px;
+
+}
+
+table.rackview_mini td, table.rackview_mini th {
+
+    width: 1em;
+    font-size: 4pt;
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+    border-width: 0px;
+    border: 0px;
+
+}
+
+table.rackview_depth td.back,
+table.rackview_depth td.back:hover
+{
+    border: 0px;
+    background: grey none;
+    color: white;
+}
+
+table.rackview_depth td.back a {
+    color: lightgreen;
+}
+
+table.rackview_depth td.back a:hover {
+    color: white;
+}
+
+table.rackview_depth td.front {
+    border: 0px;
+    border-top: 1px solid black !important;
+    background: lightgrey none;
+    color: black;
+}
+
+div.rackview_summary h1, h2 {
+    padding-bottom: 1em;
+}
+
+div.rackview_summary h1 {
+
+    font-size: 2em;
+
+}
+
+div.rackview_summary h2 {
+
+    font-size: 1.5em;
+
+}
+
+div.rackview_summary a:not([href]) {
+
+    color: black;
+
+}
+
+div.rackview_summary ul {
+
+    list-style: disc;
+    padding-left: 2em;
+    padding-bottom: 1em;
+
+}
+
+div.rackview_rackSummaryLine {
+
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+}
+
+div.rackview_rackSummaryLine > div {
+
+    width: 10000000px;
+
+}
+
+div.rackview_rackSummary {
+
+    float: left;
+    margin-right: 1em;
+
+}
