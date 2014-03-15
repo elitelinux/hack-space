@@ -1,0 +1,343 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Projet Development Team
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Глеб Мехренин <mehrenin@gmail.com>, 2013
+# sayanvd <sayanvd@yandex.ru>, 2013
+# The tsmr <tsmr@thetsmr.fr>, 2012
+msgid ""
+msgstr ""
+"Project-Id-Version: GLPI Project - projet plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-18 15:44+0100\n"
+"PO-Revision-Date: 2014-02-18 14:50+0000\n"
+"Last-Translator: The tsmr <tsmr@thetsmr.fr>\n"
+"Language-Team: Russian (Russia) (http://www.transifex.com/projects/p/GLPI_projet/language/ru_RU/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru_RU\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: hook.php:449 inc/projetstate.class.php:38
+msgid "Project state"
+msgid_plural "Project states"
+msgstr[0] "Статус проекта"
+msgstr[1] "Статусы проекта"
+msgstr[2] "Статусы проекта"
+
+#: hook.php:907
+msgid "Associate to project"
+msgstr "Привязать к проекту"
+
+#: setup.php:72 inc/task.class.php:1703 inc/taskplanning.class.php:48
+msgid "Tasks list"
+msgstr "Список заданий"
+
+#: setup.php:111 front/projet_item.class.php:852
+#: inc/notificationtargetprojet.class.php:450 inc/projet.class.php:43
+#: inc/projet_item.class.php:908 inc/taskplanning.class.php:47
+msgid "Project"
+msgid_plural "Projects"
+msgstr[0] "Проект"
+msgstr[1] "Проекты"
+msgstr[2] "Проекты"
+
+#: setup.php:123
+msgid "This plugin requires GLPI >= 0.84"
+msgstr "Этот плагин требует GLPI >= 0.84"
+
+#: front/projet_item.class.php:230 inc/projet_item.class.php:286
+msgid "Add a participant"
+msgstr "Добавить участников"
+
+#: front/projet_item.class.php:501 inc/projet_item.class.php:557
+msgctxt "button"
+msgid "Associate a project"
+msgstr "Связать проекты"
+
+#: front/projet_item.class.php:524 front/projet_item.class.php:758
+#: inc/projet_item.class.php:580 inc/projet_item.class.php:814
+msgid "Associated project"
+msgid_plural "Associated projects"
+msgstr[0] "Связанный проект"
+msgstr[1] "Связанные проекты"
+msgstr[2] "Связанные проекты"
+
+#: front/projet_item.class.php:635 inc/projet_item.class.php:691
+#: inc/task.class.php:303 inc/task.class.php:359
+msgid "Unknown project task"
+msgstr "Неизвестное задание проекта"
+
+#: front/projet_item.class.php:858 inc/projet_item.class.php:914
+msgid "Create a project from this ticket"
+msgstr "Создать проект для этой заявки"
+
+#: front/projet_item.class.php:861 inc/projet_item.class.php:917
+msgid "Create a project from this problem"
+msgstr "Создать проект для этой проблемы"
+
+#: inc/followup.class.php:112
+msgid "Project followup"
+msgstr ""
+
+#: inc/notificationtargetprojet.class.php:45
+msgid "A project has been added"
+msgstr "Проект был добавлен"
+
+#: inc/notificationtargetprojet.class.php:46
+msgid "A project has been modified"
+msgstr "Проект был изменен"
+
+#: inc/notificationtargetprojet.class.php:47
+msgid "A project has been deleted"
+msgstr "Проект был удален"
+
+#: inc/notificationtargetprojet.class.php:48
+msgid "A task has been added"
+msgstr "Задание было добавлено"
+
+#: inc/notificationtargetprojet.class.php:49
+msgid "A task has been modified"
+msgstr "Задание было изменено"
+
+#: inc/notificationtargetprojet.class.php:50
+msgid "A task has been deleted"
+msgstr "Задание было удалено"
+
+#: inc/notificationtargetprojet.class.php:51
+msgid "A followup has been added"
+msgstr ""
+
+#: inc/notificationtargetprojet.class.php:52
+msgid "A followup has been modified"
+msgstr ""
+
+#: inc/notificationtargetprojet.class.php:53
+msgid "A followup has been deleted"
+msgstr ""
+
+#: inc/notificationtargetprojet.class.php:54
+#: inc/notificationtargetprojet.class.php:192 inc/task.class.php:1850
+#: inc/task.class.php:1888
+msgid "Outdated tasks"
+msgstr "Устаревшие задания"
+
+#: inc/notificationtargetprojet.class.php:65
+#: inc/notificationtargetprojet.class.php:67
+msgid "responsible of the project"
+msgstr "ответственный за проект"
+
+#: inc/notificationtargetprojet.class.php:70
+#: inc/notificationtargetprojet.class.php:72
+#: inc/notificationtargetprojet.class.php:74
+msgid "responsible of the task"
+msgstr "ответственный за задания"
+
+#: inc/notificationtargetprojet.class.php:200 inc/taskstate.class.php:60
+#: inc/taskstate.class.php:81
+msgid "Used for planning"
+msgstr "Используется для планирования"
+
+#: inc/notificationtargetprojet.class.php:201
+#: inc/notificationtargetprojet.class.php:448
+#: inc/notificationtargetprojet.class.php:529 inc/projet.class.php:585
+#: inc/task.class.php:152 inc/task.class.php:786
+msgid "Effective duration"
+msgstr "Эффективный срок"
+
+#: inc/notificationtargetprojet.class.php:268
+#: inc/notificationtargetprojet.class.php:501
+#: inc/notificationtargetprojet.class.php:513 inc/projet.class.php:182
+#: inc/projet.class.php:508 inc/projet_projet.class.php:157
+#: inc/projet_projet.class.php:169 inc/projet_projet.class.php:345
+#: inc/projet_projet.class.php:421
+msgid "Parent project"
+msgstr "Родительский проект"
+
+#: inc/notificationtargetprojet.class.php:274
+#: inc/notificationtargetprojet.class.php:503
+#: inc/notificationtargetprojet.class.php:515 inc/projet.class.php:195
+#: inc/projet.class.php:608
+msgid "Display on the global Gantt"
+msgstr "Показать общую диаграмму Ганта"
+
+#: inc/notificationtargetprojet.class.php:296
+#: inc/notificationtargetprojet.class.php:546
+msgid "Modifications"
+msgstr "Изменения"
+
+#: inc/notificationtargetprojet.class.php:409
+msgid "Associated followup"
+msgid_plural "Associated followups"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: inc/notificationtargetprojet.class.php:431
+#: inc/notificationtargetprojet.class.php:453 inc/task.class.php:1775
+msgid "Associated task"
+msgid_plural "Associated tasks"
+msgstr[0] "Связанное задание"
+msgstr[1] "Связанные задания"
+msgstr[2] "Связанные задания"
+
+#: inc/notificationtargetprojet.class.php:443
+#: inc/notificationtargetprojet.class.php:533 inc/task.class.php:123
+#: inc/task.class.php:845
+msgid "Others participants"
+msgstr "Другие участники"
+
+#: inc/notificationtargetprojet.class.php:444
+#: inc/notificationtargetprojet.class.php:534 inc/task.class.php:128
+#: inc/task.class.php:846
+msgid "Affected people"
+msgstr "Затронутые люди"
+
+#: inc/notificationtargetprojet.class.php:445
+#: inc/notificationtargetprojet.class.php:527 inc/task.class.php:133
+#: inc/task.class.php:638 inc/task_task.class.php:159
+#: inc/task_task.class.php:171 inc/task_task.class.php:323
+msgid "Parent task"
+msgstr "Родительское задание"
+
+#: inc/notificationtargetprojet.class.php:446
+#: inc/notificationtargetprojet.class.php:528 inc/task.class.php:142
+#: inc/task.class.php:875
+msgid "Display on the Gantt"
+msgstr "Вывести диаграмму Ганта"
+
+#: inc/notificationtargetprojet.class.php:447
+#: inc/notificationtargetprojet.class.php:530 inc/task.class.php:147
+#: inc/task.class.php:673
+msgid "Dependent"
+msgstr "Зависимый"
+
+#: inc/notificationtargetprojet.class.php:541
+msgid "With creation, modification, deletion of a project"
+msgstr "С созданием изменением, удалением проекта"
+
+#: inc/notificationtargetprojet.class.php:551
+msgid "With creation, modification, deletion, expiration of a task"
+msgstr "С созданием, изменением, удалением, изменением срока задания"
+
+#: inc/notificationtargetprojet.class.php:557
+msgid "With creation, modification, deletion, expiration of a followup"
+msgstr ""
+
+#: inc/profile.class.php:37
+msgid "Rights management"
+msgstr "Права управления"
+
+#: inc/projet.class.php:200 inc/projet.class.php:564 inc/projet.class.php:592
+msgid "Estimated duration"
+msgstr "Примерная продолжительность"
+
+#: inc/projet.class.php:256 inc/task.class.php:445
+msgid "Hierarchy"
+msgstr "Иерархия"
+
+#: inc/projet.class.php:257 inc/projet.class.php:1006
+#: inc/projet.class.php:1061 inc/projet.class.php:1469
+msgid "Gantt"
+msgstr "Диаграмма Ганта"
+
+#: inc/projet.class.php:260 inc/projet.class.php:262
+msgid "Associated participant"
+msgid_plural "Associated participants"
+msgstr[0] "Связанный участник"
+msgstr[1] "Связанные участники"
+msgstr[2] "Связанные участники"
+
+#: inc/projet.class.php:370 inc/projet.class.php:435
+msgid "Unknown project"
+msgstr "Неизвестный проект"
+
+#: inc/projet.class.php:544 inc/task.class.php:1144
+msgid "Responsible"
+msgid_plural "Responsibles"
+msgstr[0] "Ответственный"
+msgstr[1] "Ответственные"
+msgstr[2] "Ответственные"
+
+#: inc/projet.class.php:545 inc/task.class.php:748
+msgid "Planification"
+msgstr "Планификация"
+
+#: inc/projet.class.php:586
+msgid "Total of effective duration of project tasks"
+msgstr "Общая эффективная продолжительность задач проекта"
+
+#: inc/projet.class.php:592
+msgid "in hours"
+msgstr "в часах"
+
+#: inc/projet.class.php:597
+msgid "Linked tickets duration"
+msgstr "Продолжительность связанных заданий"
+
+#: inc/projet.class.php:598
+msgid "Total of duration of linked tickets for project"
+msgstr "Общая продолжительность связанных заявок для проекта"
+
+#: inc/projet.class.php:648 inc/task.class.php:871
+msgid "Send email"
+msgstr "Отправить Email"
+
+#: inc/projet.class.php:892 inc/projet.class.php:925
+msgid "Responsible of projects"
+msgstr "Ответственный за проект"
+
+#: inc/projet_projet.class.php:343 inc/projet_projet.class.php:423
+msgid "Child project"
+msgid_plural "Child projects"
+msgstr[0] "Дочерний проект"
+msgstr[1] "Дочерние проекты"
+msgstr[2] "Дочерние проекты"
+
+#: inc/projetstate.class.php:52 inc/projetstate.class.php:67
+#: inc/taskstate.class.php:52 inc/taskstate.class.php:71
+msgid "Associated color"
+msgstr "Связанный цвет"
+
+#: inc/projetstate.class.php:56 inc/projetstate.class.php:72
+msgid "Finished"
+msgstr "Завершены"
+
+#: inc/task.class.php:677
+msgid "Depends on the tasks children"
+msgstr "Зависит от заданий в дочернем проекте"
+
+#: inc/task.class.php:1132
+msgid "Tasks in progress"
+msgstr "Задачи в процессе"
+
+#: inc/task.class.php:1965
+msgid "Duplicate"
+msgstr "Дубликат"
+
+#: inc/taskstate.class.php:38
+msgid "Task state"
+msgid_plural "Task states"
+msgstr[0] "Статус задания"
+msgstr[1] "Статусы задания"
+msgstr[2] "Статусы задания"
+
+#: inc/taskstate.class.php:56 inc/taskstate.class.php:76
+msgid "Finished task"
+msgstr "Завершенная задача"
+
+#: inc/task_task.class.php:321
+msgid "Child task"
+msgid_plural "Child tasks"
+msgstr[0] "Дочернее задание"
+msgstr[1] "Дочерние задания"
+msgstr[2] "Дочерние задания"
+
+#: inc/tasktype.class.php:38
+msgid "Task type"
+msgid_plural "Task types"
+msgstr[0] "Тип задания"
+msgstr[1] "Типы заданий"
+msgstr[2] "Типы заданий"

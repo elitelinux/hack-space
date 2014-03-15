@@ -1,0 +1,329 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Projet Development Team
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: GLPI Project - projet plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-18 15:44+0100\n"
+"PO-Revision-Date: 2014-02-18 14:50+0000\n"
+"Last-Translator: The tsmr <tsmr@thetsmr.fr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: hook.php:449 inc/projetstate.class.php:38
+msgid "Project state"
+msgid_plural "Project states"
+msgstr[0] "Project state"
+msgstr[1] "Project states"
+
+#: hook.php:907
+msgid "Associate to project"
+msgstr "Associate to project"
+
+#: setup.php:72 inc/task.class.php:1703 inc/taskplanning.class.php:48
+msgid "Tasks list"
+msgstr "Tasks list"
+
+#: setup.php:111 front/projet_item.class.php:852
+#: inc/notificationtargetprojet.class.php:450 inc/projet.class.php:43
+#: inc/projet_item.class.php:908 inc/taskplanning.class.php:47
+msgid "Project"
+msgid_plural "Projects"
+msgstr[0] "Project"
+msgstr[1] "Projects"
+
+#: setup.php:123
+msgid "This plugin requires GLPI >= 0.84"
+msgstr "This plugin requires GLPI >= 0.84"
+
+#: front/projet_item.class.php:230 inc/projet_item.class.php:286
+msgid "Add a participant"
+msgstr "Add a participant"
+
+#: front/projet_item.class.php:501 inc/projet_item.class.php:557
+msgctxt "button"
+msgid "Associate a project"
+msgstr "Associate a project"
+
+#: front/projet_item.class.php:524 front/projet_item.class.php:758
+#: inc/projet_item.class.php:580 inc/projet_item.class.php:814
+msgid "Associated project"
+msgid_plural "Associated projects"
+msgstr[0] "Associated project"
+msgstr[1] "Associated projects"
+
+#: front/projet_item.class.php:635 inc/projet_item.class.php:691
+#: inc/task.class.php:303 inc/task.class.php:359
+msgid "Unknown project task"
+msgstr "Unknown project task"
+
+#: front/projet_item.class.php:858 inc/projet_item.class.php:914
+msgid "Create a project from this ticket"
+msgstr "Create a project from this ticket"
+
+#: front/projet_item.class.php:861 inc/projet_item.class.php:917
+msgid "Create a project from this problem"
+msgstr "Create a project from this problem"
+
+#: inc/followup.class.php:112
+msgid "Project followup"
+msgstr "Project followup"
+
+#: inc/notificationtargetprojet.class.php:45
+msgid "A project has been added"
+msgstr "A project has been added"
+
+#: inc/notificationtargetprojet.class.php:46
+msgid "A project has been modified"
+msgstr "A project has been modified"
+
+#: inc/notificationtargetprojet.class.php:47
+msgid "A project has been deleted"
+msgstr "A project has been deleted"
+
+#: inc/notificationtargetprojet.class.php:48
+msgid "A task has been added"
+msgstr "A task has been added"
+
+#: inc/notificationtargetprojet.class.php:49
+msgid "A task has been modified"
+msgstr "A task has been modified"
+
+#: inc/notificationtargetprojet.class.php:50
+msgid "A task has been deleted"
+msgstr "A task has been deleted"
+
+#: inc/notificationtargetprojet.class.php:51
+msgid "A followup has been added"
+msgstr "A followup has been added"
+
+#: inc/notificationtargetprojet.class.php:52
+msgid "A followup has been modified"
+msgstr "A followup has been modified"
+
+#: inc/notificationtargetprojet.class.php:53
+msgid "A followup has been deleted"
+msgstr "A followup has been deleted"
+
+#: inc/notificationtargetprojet.class.php:54
+#: inc/notificationtargetprojet.class.php:192 inc/task.class.php:1850
+#: inc/task.class.php:1888
+msgid "Outdated tasks"
+msgstr "Outdated tasks"
+
+#: inc/notificationtargetprojet.class.php:65
+#: inc/notificationtargetprojet.class.php:67
+msgid "responsible of the project"
+msgstr "responsible of the project"
+
+#: inc/notificationtargetprojet.class.php:70
+#: inc/notificationtargetprojet.class.php:72
+#: inc/notificationtargetprojet.class.php:74
+msgid "responsible of the task"
+msgstr "responsible of the task"
+
+#: inc/notificationtargetprojet.class.php:200 inc/taskstate.class.php:60
+#: inc/taskstate.class.php:81
+msgid "Used for planning"
+msgstr "Used for planning"
+
+#: inc/notificationtargetprojet.class.php:201
+#: inc/notificationtargetprojet.class.php:448
+#: inc/notificationtargetprojet.class.php:529 inc/projet.class.php:585
+#: inc/task.class.php:152 inc/task.class.php:786
+msgid "Effective duration"
+msgstr "Effective duration"
+
+#: inc/notificationtargetprojet.class.php:268
+#: inc/notificationtargetprojet.class.php:501
+#: inc/notificationtargetprojet.class.php:513 inc/projet.class.php:182
+#: inc/projet.class.php:508 inc/projet_projet.class.php:157
+#: inc/projet_projet.class.php:169 inc/projet_projet.class.php:345
+#: inc/projet_projet.class.php:421
+msgid "Parent project"
+msgstr "Parent project"
+
+#: inc/notificationtargetprojet.class.php:274
+#: inc/notificationtargetprojet.class.php:503
+#: inc/notificationtargetprojet.class.php:515 inc/projet.class.php:195
+#: inc/projet.class.php:608
+msgid "Display on the global Gantt"
+msgstr "Display on the global Gantt"
+
+#: inc/notificationtargetprojet.class.php:296
+#: inc/notificationtargetprojet.class.php:546
+msgid "Modifications"
+msgstr "Modifications"
+
+#: inc/notificationtargetprojet.class.php:409
+msgid "Associated followup"
+msgid_plural "Associated followups"
+msgstr[0] "Associated followup"
+msgstr[1] "Associated followups"
+
+#: inc/notificationtargetprojet.class.php:431
+#: inc/notificationtargetprojet.class.php:453 inc/task.class.php:1775
+msgid "Associated task"
+msgid_plural "Associated tasks"
+msgstr[0] "Associated task"
+msgstr[1] "Associated tasks"
+
+#: inc/notificationtargetprojet.class.php:443
+#: inc/notificationtargetprojet.class.php:533 inc/task.class.php:123
+#: inc/task.class.php:845
+msgid "Others participants"
+msgstr "Others participants"
+
+#: inc/notificationtargetprojet.class.php:444
+#: inc/notificationtargetprojet.class.php:534 inc/task.class.php:128
+#: inc/task.class.php:846
+msgid "Affected people"
+msgstr "Affected people"
+
+#: inc/notificationtargetprojet.class.php:445
+#: inc/notificationtargetprojet.class.php:527 inc/task.class.php:133
+#: inc/task.class.php:638 inc/task_task.class.php:159
+#: inc/task_task.class.php:171 inc/task_task.class.php:323
+msgid "Parent task"
+msgstr "Parent task"
+
+#: inc/notificationtargetprojet.class.php:446
+#: inc/notificationtargetprojet.class.php:528 inc/task.class.php:142
+#: inc/task.class.php:875
+msgid "Display on the Gantt"
+msgstr "Display on the Gantt"
+
+#: inc/notificationtargetprojet.class.php:447
+#: inc/notificationtargetprojet.class.php:530 inc/task.class.php:147
+#: inc/task.class.php:673
+msgid "Dependent"
+msgstr "Dependent"
+
+#: inc/notificationtargetprojet.class.php:541
+msgid "With creation, modification, deletion of a project"
+msgstr "With creation, modification, deletion of a project"
+
+#: inc/notificationtargetprojet.class.php:551
+msgid "With creation, modification, deletion, expiration of a task"
+msgstr "With creation, modification, deletion, expiration of a task"
+
+#: inc/notificationtargetprojet.class.php:557
+msgid "With creation, modification, deletion, expiration of a followup"
+msgstr "With creation, modification, deletion, expiration of a followup"
+
+#: inc/profile.class.php:37
+msgid "Rights management"
+msgstr "Rights management"
+
+#: inc/projet.class.php:200 inc/projet.class.php:564 inc/projet.class.php:592
+msgid "Estimated duration"
+msgstr "Estimated duration"
+
+#: inc/projet.class.php:256 inc/task.class.php:445
+msgid "Hierarchy"
+msgstr "Hierarchy"
+
+#: inc/projet.class.php:257 inc/projet.class.php:1006
+#: inc/projet.class.php:1061 inc/projet.class.php:1469
+msgid "Gantt"
+msgstr "Gantt"
+
+#: inc/projet.class.php:260 inc/projet.class.php:262
+msgid "Associated participant"
+msgid_plural "Associated participants"
+msgstr[0] "Associated participant"
+msgstr[1] "Associated participants"
+
+#: inc/projet.class.php:370 inc/projet.class.php:435
+msgid "Unknown project"
+msgstr "Unknown project"
+
+#: inc/projet.class.php:544 inc/task.class.php:1144
+msgid "Responsible"
+msgid_plural "Responsibles"
+msgstr[0] "Responsible"
+msgstr[1] "Responsibles"
+
+#: inc/projet.class.php:545 inc/task.class.php:748
+msgid "Planification"
+msgstr "Planification"
+
+#: inc/projet.class.php:586
+msgid "Total of effective duration of project tasks"
+msgstr "Total of effective duration of project tasks"
+
+#: inc/projet.class.php:592
+msgid "in hours"
+msgstr "in hours"
+
+#: inc/projet.class.php:597
+msgid "Linked tickets duration"
+msgstr "Linked tickets duration"
+
+#: inc/projet.class.php:598
+msgid "Total of duration of linked tickets for project"
+msgstr "Total of duration of linked tickets for project"
+
+#: inc/projet.class.php:648 inc/task.class.php:871
+msgid "Send email"
+msgstr "Send email"
+
+#: inc/projet.class.php:892 inc/projet.class.php:925
+msgid "Responsible of projects"
+msgstr "Responsible of projects"
+
+#: inc/projet_projet.class.php:343 inc/projet_projet.class.php:423
+msgid "Child project"
+msgid_plural "Child projects"
+msgstr[0] "Child project"
+msgstr[1] "Child projects"
+
+#: inc/projetstate.class.php:52 inc/projetstate.class.php:67
+#: inc/taskstate.class.php:52 inc/taskstate.class.php:71
+msgid "Associated color"
+msgstr "Associated color"
+
+#: inc/projetstate.class.php:56 inc/projetstate.class.php:72
+msgid "Finished"
+msgstr "Finished"
+
+#: inc/task.class.php:677
+msgid "Depends on the tasks children"
+msgstr "Depends on the tasks children"
+
+#: inc/task.class.php:1132
+msgid "Tasks in progress"
+msgstr "Tasks in progress"
+
+#: inc/task.class.php:1965
+msgid "Duplicate"
+msgstr "Duplicate"
+
+#: inc/taskstate.class.php:38
+msgid "Task state"
+msgid_plural "Task states"
+msgstr[0] "Task state"
+msgstr[1] "Task states"
+
+#: inc/taskstate.class.php:56 inc/taskstate.class.php:76
+msgid "Finished task"
+msgstr "Finished task"
+
+#: inc/task_task.class.php:321
+msgid "Child task"
+msgid_plural "Child tasks"
+msgstr[0] "Child task"
+msgstr[1] "Child tasks"
+
+#: inc/tasktype.class.php:38
+msgid "Task type"
+msgid_plural "Task types"
+msgstr[0] "Task type"
+msgstr[1] "Task types"
