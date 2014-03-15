@@ -1,0 +1,178 @@
+.msgboxmonit {
+    margin: 0 auto 20px;
+    width: 700px;
+    padding: 11px 0;
+    font-size: 11px;
+    text-align: center;
+    font-family: "Trebuchet MS", Tahoma, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -o-border-radius: 7px;
+    -moz-box-shadow: 0px 1px 3px #888;
+    -webkit-box-shadow: 0px 1px 3px #888;
+    box-shadow: 0px 1px 3px #888;
+    /* Anciens navigateurs */
+    -o-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+ }
+
+ .msgboxmonit-red {
+    border: 1px red solid;
+    background-color: #FDD;
+    background-image: -webkit-gradient(linear,left top, left bottom,from(#FEE),to(#FDD));
+    background-image: -webkit-linear-gradient(top,#FEE,#FDD);
+    background-image: -moz-linear-gradient(top,#FEE,#FDD);
+    background-image: -o-linear-gradient(top,#FEE,#FDD);
+    background-image: linear-gradient(top,#FEE,#FDD);
+ }
+ 
+  .msgboxmonit-orange {
+    border: 1px orange solid;
+    background-color: #FFD;
+    background-image: -webkit-gradient(linear,left top, left bottom,from(#FFE),to(#FFD));
+    background-image: -webkit-linear-gradient(top,#FFE,#FFD);
+    background-image: -moz-linear-gradient(top,#FFE,#FFD);
+    background-image: -o-linear-gradient(top,#FFE,#FFD);
+    background-image: linear-gradient(top,#FFE,#FFD);
+ }
+
+ .msgboxmonit-green {
+    border: 1px #659900 solid;
+    background-color: #DFD;
+    background-image: -webkit-gradient(linear,left top, left bottom,from(#EFE),to(#DFD));
+    background-image: -webkit-linear-gradient(top,#EFE,#DFD);
+    background-image: -moz-linear-gradient(top,#EFE,#DFD);
+    background-image: -o-linear-gradient(top,#EFE,#DFD);
+    background-image: linear-gradient(top,#EFE,#DFD);
+ }
+
+ .msgboxmonit-grey {
+    border: 1px #CCC solid;
+    background-color: #DDD;
+    background-image: -webkit-gradient(linear,left top, left bottom,from(#FFF),to(#DDD));
+    background-image: -webkit-linear-gradient(top,#FFF,#DDD);
+    background-image: -moz-linear-gradient(top,#FFF,#DDD);
+    background-image: -o-linear-gradient(top,#FFF,#DDD);
+    background-image: linear-gradient(top,#FFF,#DDD);
+}
+
+.gridweathermap {
+   border: 1px solid rgba(0, 0, 0, .1);
+   border-collapse:collapse;
+}
+
+.gridweathermap td {
+   border: 1px solid rgba(0, 0, 0, .1);
+
+}
+
+
+
+.ch-item {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	position: relative;
+	cursor: default;
+	box-shadow: 
+		inset 0 0 0 16px rgba(255,255,255,0.6),
+		0 1px 2px rgba(0,0,0,0.1);
+		
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+   width: 180px;
+	height: 180px;
+	display: block;
+}
+
+.ch-item div {
+	position: absolute;
+	width: inherit;
+	height: inherit;
+	border-radius: 50%;
+	opacity: 1;
+	
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+	
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+}
+
+.ch-info-crit {
+	background: rgba(159,48,48, 0.8);
+}
+
+.ch-info-warn {
+	background: rgba(212,161,94, 0.8);
+}
+
+.ch-info-ok{
+	background: rgba(76,180,73, 0.8);
+}
+
+.ch-item div>h1 {
+	color: #fff;
+	letter-spacing: 2px;
+	font-size: 20px;
+	margin: 0 30px;
+	padding: 25px 0 0 0;
+	height: 110px;
+	text-align:center;
+	font-family: 'Open Sans', Arial, sans-serif;
+	text-shadow: 
+		0 0 1px #fff, 
+		0 1px 2px rgba(0,0,0,0.3);
+	-webkit-transition: all 1s ease-in-out 0.4s;
+	-moz-transition: all 1s ease-in-out 0.4s;
+	-o-transition: all 1s ease-in-out 0.4s;
+	-ms-transition: all 1s ease-in-out 0.4s;
+	transition: all 1s ease-in-out 0.4s;
+}
+
+.ch-item div>h1>a {
+	color: #fff;
+
+   
+}
+
+.ch-item div>p {
+	color: #fff;
+	padding: 5px 5px;
+	position: relative;
+	top: -45px;
+	font-style: bold;
+	margin: 0 15px;
+	font-size: 50px;
+	border-top: 1px solid rgba(255,255,255,0.5);
+	text-align:center;
+	opacity: 1;
+	-webkit-transition: all 1s ease-in-out 0.4s;
+	-moz-transition: all 1s ease-in-out 0.4s;
+	-o-transition: all 1s ease-in-out 0.4s;
+	-ms-transition: all 1s ease-in-out 0.4s;
+	transition: all 1s ease-in-out 0.4s;
+}
+
+.ch-item div>p>a {
+   color: #fff;
+	padding: 5px 5px;
+	position: relative;
+	font-style: italic;
+	margin: 0 15px;
+	font-size: 40px;
+	text-align:center;
+	opacity: 1;
+}
