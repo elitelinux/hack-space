@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Utilitaires Development Team
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GLPI - utilitaires plugin 1.6.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-02 12:23+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: setup.php:56 inc/utilitaire.class.php:68
+msgid "Utility"
+msgid_plural "Utilities"
+msgstr[0] ""
+msgstr[1] ""
+
+#: setup.php:69
+msgid "This plugin requires GLPI >= 0.84"
+msgstr ""
+
+#: front/utilitaire.php:57 front/utilitaire.php:63
+msgid "Successful treatment"
+msgstr ""
+
+#: front/utilitaire.php:64
+msgid "records processed"
+msgstr ""
+
+#: front/utilitaire.php:70
+msgid "Treatment failure"
+msgstr ""
+
+#: front/utilitaire.php:71
+msgid "unprocessed records"
+msgstr ""
+
+#: inc/object.class.php:173 inc/object.class.php:226
+msgid "Records to process"
+msgstr ""
+
+#: inc/object.class.php:211 inc/object.class.php:254
+msgid "Nothing to treat"
+msgstr ""
+
+#: inc/profile.class.php:38 inc/profile.class.php:142
+msgid "Rights management"
+msgstr ""
+
+#: inc/utilitaire.class.php:100
+msgid "Inventory objects"
+msgstr ""
+
+#: inc/utilitaire.class.php:109
+msgid "Computer details"
+msgstr ""
+
+#: inc/utilitaire.class.php:128
+msgid "Helpdesk"
+msgstr ""
+
+#: inc/utilitaire.class.php:137
+msgid "Management"
+msgstr ""
+
+#: inc/utilitaire.class.php:146
+msgid "Tools"
+msgstr ""
+
+#: inc/utilitaire.class.php:153
+msgid ""
+"Caution: it is strongly recommended to backup the database before using "
+"these utilities"
+msgstr ""
+
+#: inc/utilitaire.class.php:172 inc/utilitaire.class.php:174
+#: inc/utilitaire.class.php:322 inc/utilitaire.class.php:324
+msgid "installed softwares"
+msgstr ""
+
+#: inc/utilitaire.class.php:203
+msgid "Purge trash"
+msgstr ""
+
+#: inc/utilitaire.class.php:206
+msgid "Delete and purge all"
+msgstr ""
+
+#: inc/utilitaire.class.php:208
+msgid "ONLY FOR TEST : Truncate Mysql tables"
+msgstr ""
+
+#: inc/utilitaire.class.php:212
+msgid "Purge closed tickets/ problems from a selected date"
+msgstr ""
+
+#: inc/utilitaire.class.php:218
+msgid "Reset All OCS links"
+msgstr ""
+
+#: inc/utilitaire.class.php:219
+msgid "Reset OCS locks"
+msgstr ""
+
+#: inc/utilitaire.class.php:220
+msgid "Force OCS synchronization"
+msgstr ""
+
+#: inc/utilitaire.class.php:228 inc/utilitaire.class.php:237
+msgid "Purge not linked objects"
+msgstr ""
+
+#: inc/utilitaire.class.php:229
+msgid "Create the models from object names"
+msgstr ""
+
+#: inc/utilitaire.class.php:230
+msgid "Affect the models"
+msgstr ""

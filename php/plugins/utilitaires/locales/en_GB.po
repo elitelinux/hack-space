@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Utilitaires Development Team
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: GLPI Project - utilitaires plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-02 12:23+0200\n"
+"PO-Revision-Date: 2013-04-02 10:46+0000\n"
+"Last-Translator: The tsmr <tsmr@thetsmr.fr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: setup.php:56 inc/utilitaire.class.php:68
+msgid "Utility"
+msgid_plural "Utilities"
+msgstr[0] "Utility"
+msgstr[1] "Utilities"
+
+#: setup.php:69
+msgid "This plugin requires GLPI >= 0.84"
+msgstr "This plugin requires GLPI >= 0.84"
+
+#: front/utilitaire.php:57 front/utilitaire.php:63
+msgid "Successful treatment"
+msgstr "Successful treatment"
+
+#: front/utilitaire.php:64
+msgid "records processed"
+msgstr "records processed"
+
+#: front/utilitaire.php:70
+msgid "Treatment failure"
+msgstr "Treatment failure"
+
+#: front/utilitaire.php:71
+msgid "unprocessed records"
+msgstr "unprocessed records"
+
+#: inc/object.class.php:173 inc/object.class.php:226
+msgid "Records to process"
+msgstr "Records to process"
+
+#: inc/object.class.php:211 inc/object.class.php:254
+msgid "Nothing to treat"
+msgstr "Nothing to treat"
+
+#: inc/profile.class.php:38 inc/profile.class.php:142
+msgid "Rights management"
+msgstr "Rights management"
+
+#: inc/utilitaire.class.php:100
+msgid "Inventory objects"
+msgstr "Inventory objects"
+
+#: inc/utilitaire.class.php:109
+msgid "Computer details"
+msgstr "Computer details"
+
+#: inc/utilitaire.class.php:128
+msgid "Helpdesk"
+msgstr "Helpdesk"
+
+#: inc/utilitaire.class.php:137
+msgid "Management"
+msgstr "Management"
+
+#: inc/utilitaire.class.php:146
+msgid "Tools"
+msgstr "Tools"
+
+#: inc/utilitaire.class.php:153
+msgid ""
+"Caution: it is strongly recommended to backup the database before using "
+"these utilities"
+msgstr "Caution: it is strongly recommended to backup the database before using these utilities"
+
+#: inc/utilitaire.class.php:172 inc/utilitaire.class.php:174
+#: inc/utilitaire.class.php:322 inc/utilitaire.class.php:324
+msgid "installed softwares"
+msgstr "installed softwares"
+
+#: inc/utilitaire.class.php:203
+msgid "Purge trash"
+msgstr "Purge trash"
+
+#: inc/utilitaire.class.php:206
+msgid "Delete and purge all"
+msgstr "Delete and purge all"
+
+#: inc/utilitaire.class.php:208
+msgid "ONLY FOR TEST : Truncate Mysql tables"
+msgstr "ONLY FOR TEST : Truncate Mysql tables"
+
+#: inc/utilitaire.class.php:212
+msgid "Purge closed tickets/ problems from a selected date"
+msgstr "Purge closed tickets/ problems from a selected date"
+
+#: inc/utilitaire.class.php:218
+msgid "Reset All OCS links"
+msgstr "Reset All OCS links"
+
+#: inc/utilitaire.class.php:219
+msgid "Reset OCS locks"
+msgstr "Reset OCS locks"
+
+#: inc/utilitaire.class.php:220
+msgid "Force OCS synchronization"
+msgstr "Force OCS synchronization"
+
+#: inc/utilitaire.class.php:228 inc/utilitaire.class.php:237
+msgid "Purge not linked objects"
+msgstr "Purge not linked objects"
+
+#: inc/utilitaire.class.php:229
+msgid "Create the models from object names"
+msgstr "Create the models from object names"
+
+#: inc/utilitaire.class.php:230
+msgid "Affect the models"
+msgstr "Affect the models"
