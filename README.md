@@ -97,4 +97,15 @@ Infotel has developed around thirty add-ons for GLPI.
     IT Rack management.
     Electronic orders and billing management.
 
+Install the App
+-------
 
+Through the use of add-ons, GLPI lets you add several functionalities.
+Infotel has developed around thirty add-ons for GLPI.
+
+    Personnel time and attendance management.
+    Mapping tool.
+    Project management (changes).
+    mv hackspace/ /var/www/hackspace
+    chmod -R 777 /var/www/hackspace/files/
+    chmod -R 777 /var/www/hackspace/config/
