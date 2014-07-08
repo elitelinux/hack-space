@@ -105,13 +105,11 @@ Infotel has developed around thirty add-ons for GLPI.
 
 Install the App
 -------
-
-Through the use of add-ons, GLPI lets you add several functionalities.
-Infotel has developed around thirty add-ons for GLPI.
-
-    Personnel time and attendance management.
-    Mapping tool.
-    Project management (changes).
+This app was only tested in Linux, please don't try this in Windows, because your installation will be fail.
+1) Download the app
+2) unzip the app
+3) Run this in the console
     mv hackspace/ /var/www/hackspace
     chmod -R 777 /var/www/hackspace/files/
     chmod -R 777 /var/www/hackspace/config/
+4) Go to http://localhost in your server.    
