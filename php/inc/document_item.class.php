@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: document_item.class.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: document_item.class.php 22875 2014-04-09 07:07:17Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -477,7 +477,7 @@ class Document_Item extends CommonDBRelation{
          $linkparam = "&amp;tickets_id=".$item->fields['id'];
       }
 
-      $canedit       =  $item->canadditem('Document');
+      $canedit       =  $item->canAddItem('Document') && Document::canView();
       $rand          = mt_rand();
       $is_recursive  = $item->isRecursive();
 
@@ -557,7 +557,7 @@ class Document_Item extends CommonDBRelation{
          }
       }
 
-      if ($canedit && $withtemplate < 2) {
+      if ($item->canAddItem('Document') && $withtemplate < 2) {
          // Restrict entity for knowbase
          $entities = "";
          $entity   = $_SESSION["glpiactive_entity"];
@@ -604,6 +604,7 @@ class Document_Item extends CommonDBRelation{
          echo "<td class='right'>";
          echo "<input type='hidden' name='entities_id' value='$entity'>";
          echo "<input type='hidden' name='is_recursive' value='$is_recursive'>";
+
          echo "<input type='hidden' name='itemtype' value='".$item->getType()."'>";
          echo "<input type='hidden' name='items_id' value='$ID'>";
          if ($item->getType() == 'Ticket') {
@@ -627,8 +628,6 @@ class Document_Item extends CommonDBRelation{
             echo "<table class='tab_cadre_fixe'>";
             echo "<tr class='tab_bg_1'>";
             echo "<td colspan='4' class='center'>";
-            echo "<input type='hidden' name='entities_id' value='$entity'>";
-            echo "<input type='hidden' name='is_recursive' value='$is_recursive'>";
             echo "<input type='hidden' name='itemtype' value='".$item->getType()."'>";
             echo "<input type='hidden' name='items_id' value='$ID'>";
             if ($item->getType() == 'Ticket') {

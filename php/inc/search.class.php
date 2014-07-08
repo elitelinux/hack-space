@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: search.class.php 22668 2014-02-14 22:13:51Z ddurieux $
+ * @version $Id: search.class.php 22992 2014-06-04 23:07:06Z ddurieux $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -163,9 +163,9 @@ class Search {
       } else {
          $entity_restrict = $item->isEntityAssign();
       }
-      
+
       self::$output_type = $output_type;
-      
+
       $metanames = array();
 
       // Get the items to display
@@ -2595,6 +2595,9 @@ class Search {
          case 'Reminder' :
             return Reminder::addVisibilityRestrict();
 
+         case 'RSSFeed' :
+            return RSSFeed::addVisibilityRestrict();
+
          case 'Notification' :
             if (!Session::haveRight('config','w')) {
                return " `glpi_notifications`.`itemtype` NOT IN ('Crontask', 'DBConnection') ";
@@ -2809,6 +2812,13 @@ class Search {
                return $out;
             }
          }
+         $function = 'plugin_'.$plug['plugin'].'_addSpecificWhere';
+         if (function_exists($function)) {
+            $out = $function($link,$nott,$itemtype,$ID,$val,$searchtype);
+            if (!empty($out)) {
+               return $out;
+            }
+         }
       }
 
       switch ($inittable.".".$field) {
@@ -2874,7 +2884,7 @@ class Search {
                   case 'notequals' :
                      return " $link (`$table`.`id` NOT IN ('".implode("','",$_SESSION['glpigroups'])."')) ";
                      break;
-                     
+
                   case 'under' :
                      $groups = $_SESSION['glpigroups'];
                      foreach ($_SESSION['glpigroups'] as $g) {
@@ -2883,7 +2893,7 @@ class Search {
                      $groups = array_unique($groups);
                      return " $link (`$table`.`id` IN ('".implode("','", $groups)."')) ";
                      break;
-                     
+
                   case 'notunder' :
                      $groups = $_SESSION['glpigroups'];
                      foreach ($_SESSION['glpigroups'] as $g) {
@@ -2891,7 +2901,7 @@ class Search {
                      }
                      $groups = array_unique($groups);
                      return " $link (`$table`.`id` NOT IN ('".implode("','", $groups)."')) ";
-                     break;                     
+                     break;
                }
             }
             break;
@@ -3134,6 +3144,13 @@ class Search {
                   return $out;
                }
             }
+            $function = 'plugin_'.$plug.'_addSpecificWhere';
+            if (function_exists($function)) {
+               $out = $function($link, $nott, $itemtype, $ID, $val, $searchtype);
+               if (!empty($out)) {
+                  return $out;
+               }
+            }
          }
       }
 
@@ -3325,6 +3342,9 @@ class Search {
              return self::addLeftJoin($itemtype, $ref_table, $already_link_tables,
                                       "glpi_profiles_users", "profiles_users_id", 0, 0,
                                       array('jointype' => 'child'));
+
+         case 'RSSFeed' :
+            return RSSFeed::addVisibilityJoins();
 
          case 'Reminder' :
             return Reminder::addVisibilityJoins();
@@ -4045,7 +4065,7 @@ class Search {
                      if (!empty($comp)) {
                         $text = sprintf(__('%1$s %2$s'), $text, "(".$comp.")");
                      }
-                     
+
                      if (!in_array($text,$added)) {
                         if ($count_display) {
                            $out .= "<br>";
@@ -4687,7 +4707,7 @@ class Search {
                                                                         'display' => false)));
 
                      } else {
-                        $out = $text;
+                        $out .= $text;
                      }
 
                   }

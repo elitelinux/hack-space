@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: softwareversion.class.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: softwareversion.class.php 22744 2014-03-01 16:56:35Z yllen $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -56,7 +56,7 @@ class SoftwareVersion extends CommonDBChild {
 
       $csv = new Computer_SoftwareVersion();
       $csv->cleanDBonItemDelete(__CLASS__, $this->fields['id']);
-      
+
    }
 
 
@@ -241,6 +241,13 @@ class SoftwareVersion extends CommonDBChild {
 
       echo "<div class='spaced'>";
 
+      if ($canedit) {
+         echo "<div class='center firstbloc'>";
+         echo "<a class='vsubmit' href='softwareversion.form.php?softwares_id=$softwares_id'>".
+                _x('button', 'Add a version')."</a></td></tr>";
+         echo "</div>";
+      }
+
       $query = "SELECT `glpi_softwareversions`.*,
                        `glpi_states`.`name` AS sname
                 FROM `glpi_softwareversions`
@@ -291,11 +298,6 @@ class SoftwareVersion extends CommonDBChild {
          } else {
             echo "<table class='tab_cadre_fixe'>";
             echo "<tr><th>".__('No item found')."</th></tr>";
-            if ($canedit) {
-               echo "<tr class='tab_bg_2'><td class='center'>";
-               echo "<a href='softwareversion.form.php?softwares_id=$softwares_id'>".
-                      _x('button', 'Add a version')."</a></td></tr>";
-            }
             echo "</table>\n";
          }
 

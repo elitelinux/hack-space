@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: notificationmail.class.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: notificationmail.class.php 22979 2014-05-15 13:30:12Z tsmr $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -28,7 +28,7 @@
  */
 
 /** @file
-* @brief 
+* @brief
 */
 
 if (!defined('GLPI_ROOT')) {
@@ -239,7 +239,7 @@ class NotificationMail extends phpmailer implements NotificationInterface {
       if (!empty($options['messageid'])) {
          $mmail->MessageID = "<".$options['messageid'].">";
       }
-      
+
       $messageerror = __('Error in sending the email');
 
       if (!$mmail->Send()) {

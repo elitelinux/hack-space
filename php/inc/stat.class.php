@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: stat.class.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: stat.class.php 22785 2014-03-14 10:50:11Z yllen $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -412,8 +412,10 @@ class Stat {
             echo Search::showHeaderItem($output_type, __('Number of late tickets'), $header_num);
             echo Search::showHeaderItem($output_type, __('Number of closed tickets'), $header_num);
          } else {
-            echo Search::showHeaderItem($output_type, __('Opened'), $header_num);
-            echo Search::showHeaderItem($output_type, __('Solved'), $header_num);
+            echo Search::showHeaderItem($output_type,  _nx('ticket','Opened','Opened',2),
+                                        $header_num);
+            echo Search::showHeaderItem($output_type,  _nx('ticket','Solved', 'Solved', 2),
+                                        $header_num);
             echo Search::showHeaderItem($output_type, __('Late'), $header_num);
             echo Search::showHeaderItem($output_type, __('Closed'), $header_num);
          }
@@ -430,8 +432,10 @@ class Stat {
                                            $header_num);
 
             } else {
-               echo Search::showHeaderItem($output_type, __('Opened'), $header_num);
-               echo Search::showHeaderItem($output_type, __('Answered'), $header_num);
+               echo Search::showHeaderItem($output_type,_nx('survey','Opened','Opened',2),
+                                           $header_num);
+               echo Search::showHeaderItem($output_type, _nx('survey','Answered','Answered',2),
+                                           $header_num);
                echo Search::showHeaderItem($output_type, __('Average'), $header_num);
             }
          }

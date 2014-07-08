@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: planningrecall.class.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: planningrecall.class.php 22887 2014-04-09 12:59:15Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -360,7 +360,7 @@ class PlanningRecall extends CommonDBChild {
 
       $pr = new self();
       foreach ($DB->request($query) as $data) {
-         if ($pr->getFromDB($data['id'])) {
+         if ($pr->getFromDB($data['id']) && $pr->getItem()) {
             if (NotificationEvent::raiseEvent('planningrecall', $pr)) {
 
                $cron_status         = 1;
@@ -372,6 +372,9 @@ class PlanningRecall extends CommonDBChild {
 
                $alert->add($input);
             }
+         } else {
+            // Clean item
+            $pr->delete($data);
          }
       }
       return $cron_status;

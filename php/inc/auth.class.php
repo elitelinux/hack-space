@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: auth.class.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: auth.class.php 22989 2014-06-04 06:38:12Z remi $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -543,7 +543,8 @@ class Auth {
 
       // If not already auth
       if (!$this->auth_succeded) {
-         if (empty($login_name) || empty($login_password)) {
+         if (empty($login_name) || strstr($login_name, "\0")
+             || empty($login_password) || strstr($login_password, "\0")) {
             $this->addToError(__('Empty login or password'));
          } else {
             // exists=0 -> user doesn't yet exist

@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: notificationtargetcontract.class.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: notificationtargetcontract.class.php 23021 2014-06-17 12:30:02Z yllen $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -108,6 +108,7 @@ class NotificationTargetContract extends NotificationTarget {
                   $typename = $type->getTypeName();
                   foreach ($item as $item_data) {
                      $toadd[] = sprintf(__('%1$s - %2$s'),$typename, $item_data['name']);
+                     $tmp['##contract.items.number##']++;
                   }
                }
             }

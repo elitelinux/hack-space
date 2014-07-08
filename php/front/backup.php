@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: backup.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: backup.php 22951 2014-04-25 10:12:43Z yllen $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -59,17 +59,6 @@ if ($max_time == 0) {
 } else {
    $defaulttimeout  = max(1, $max_time-2);
    $defaultrowlimit = 2;
-}
-
-
-// les deux options qui suivent devraient etre incluses dans le fichier de config plutot non ?
-// 1 only with ZLib support, else change value to 0
-$compression = 0;
-
-if ($compression == 1) {
-   $filetype = "sql.gz";
-} else {
-   $filetype = "sql";
 }
 
 
@@ -242,7 +231,11 @@ function restoreMySqlDump($DB, $dumpFile, $duree) {
       echo sprintf(__('File %s not found.'), $dumpFile)."<br>";
       return false;
    }
-   $fileHandle = fopen($dumpFile, "rb");
+   if (substr($dumpFile, -2) == "gz") {
+      $fileHandle = gzopen($dumpFile, "rb");
+   } else {
+      $fileHandle = fopen($dumpFile, "rb");
+   }
 
    if (!$fileHandle) {
       //TRASN: %s is the name of the file
@@ -251,39 +244,76 @@ function restoreMySqlDump($DB, $dumpFile, $duree) {
    }
 
    if ($offset != 0) {
-      if (fseek($fileHandle,$offset,SEEK_SET) != 0) { //erreur
-         //TRANS: %s is the number of the byte
-         printf(__("Unable to find the byte %s"), Html::formatNumber($offset, false, 0));
-         echo "<br>";
-         return false;
+      if (substr($dumpFile, -2) == "gz") {
+         if (gzseek($fileHandle,$offset,SEEK_SET) != 0) { //erreur
+            //TRANS: %s is the number of the byte
+            printf(__("Unable to find the byte %s"), Html::formatNumber($offset, false, 0));
+            echo "<br>";
+            return false;
+         }
+      } else {
+         if (fseek($fileHandle,$offset,SEEK_SET) != 0) { //erreur
+            //TRANS: %s is the number of the byte
+            printf(__("Unable to find the byte %s"), Html::formatNumber($offset, false, 0));
+            echo "<br>";
+            return false;
+         }
       }
       Html::glpi_flush();
    }
 
    $formattedQuery = "";
 
-   while (!feof($fileHandle)) {
-      current_time();
-      if (($duree > 0)
-          && ($TPSCOUR >= $duree)) { //on atteint la fin du temps imparti
-         return true;
+   if (substr($dumpFile, -2) == "gz") {
+      while (!gzeof($fileHandle)) {
+         current_time();
+         if (($duree > 0)
+             && ($TPSCOUR >= $duree)) { //on atteint la fin du temps imparti
+            return true;
+         }
+
+         // specify read length to be able to read long lines
+         $buffer = gzgets($fileHandle, 102400);
+
+         // do not strip comments due to problems when # in begin of a data line
+         $formattedQuery .= $buffer;
+         if (Toolbox::get_magic_quotes_runtime()) {
+            $formattedQuery = stripslashes($formattedQuery);
+         }
+
+         if (substr(rtrim($formattedQuery),-1) == ";") {
+            // Do not use the $DB->query
+            if ($DB->query($formattedQuery)) { //if no success continue to concatenate
+               $offset         = gztell($fileHandle);
+               $formattedQuery = "";
+               $cpt++;
+            }
+         }
       }
+   } else {
+      while (!feof($fileHandle)) {
+         current_time();
+         if (($duree > 0)
+             && ($TPSCOUR >= $duree)) { //on atteint la fin du temps imparti
+            return true;
+         }
 
-      // specify read length to be able to read long lines
-      $buffer = fgets($fileHandle, 102400);
+         // specify read length to be able to read long lines
+         $buffer = fgets($fileHandle, 102400);
 
-      // do not strip comments due to problems when # in begin of a data line
-      $formattedQuery .= $buffer;
-      if (Toolbox::get_magic_quotes_runtime()) {
-         $formattedQuery = stripslashes($formattedQuery);
-      }
+         // do not strip comments due to problems when # in begin of a data line
+         $formattedQuery .= $buffer;
+         if (Toolbox::get_magic_quotes_runtime()) {
+            $formattedQuery = stripslashes($formattedQuery);
+         }
 
-      if (substr(rtrim($formattedQuery),-1) == ";") {
-         // Do not use the $DB->query
-         if ($DB->query($formattedQuery)) { //if no success continue to concatenate
-            $offset         = ftell($fileHandle);
-            $formattedQuery = "";
-            $cpt++;
+         if (substr(rtrim($formattedQuery),-1) == ";") {
+            // Do not use the $DB->query
+            if ($DB->query($formattedQuery)) { //if no success continue to concatenate
+               $offset         = ftell($fileHandle);
+               $formattedQuery = "";
+               $cpt++;
+            }
          }
       }
    }
@@ -295,7 +325,11 @@ function restoreMySqlDump($DB, $dumpFile, $duree) {
       echo "<br>".$DB->error()."<hr>";
    }
 
-   fclose($fileHandle);
+   if (substr($dumpFile, -2) == "gz") {
+      gzclose($fileHandle);
+   } else {
+      fclose($fileHandle);
+   }
    $offset = -1;
    return true;
 }
@@ -314,7 +348,7 @@ function backupMySql($DB, $dumpFile, $duree, $rowlimit) {
    // $dumpFile, fichier source
    // $duree=timeout pour changement de page (-1 = aucun)
 
-   $fileHandle = fopen($dumpFile, "a");
+   $fileHandle = gzopen($dumpFile, "a");
 
    if (!$fileHandle) {
       //TRANS: %s is the name of the file
@@ -326,7 +360,7 @@ function backupMySql($DB, $dumpFile, $duree, $rowlimit) {
       $time_file = date("Y-m-d-H-i");
       $cur_time  = date("Y-m-d H:i");
       $todump    = "#GLPI Dump database on $cur_time\n";
-      fwrite ($fileHandle, $todump);
+      gzwrite($fileHandle, $todump);
    }
 
    $result = $DB->list_tables();
@@ -340,7 +374,7 @@ function backupMySql($DB, $dumpFile, $duree, $rowlimit) {
       // Dump de la structure table
       if ($offsetrow == -1) {
          $todump = "\n".get_def($DB,$tables[$offsettable]);
-         fwrite ($fileHandle,$todump);
+         gzwrite($fileHandle, $todump);
          $offsetrow++;
          $cpt++;
       }
@@ -355,7 +389,7 @@ function backupMySql($DB, $dumpFile, $duree, $rowlimit) {
          $rowtodump = substr_count($todump, "INSERT INTO");
 
          if ($rowtodump > 0) {
-            fwrite ($fileHandle,$todump);
+            gzwrite($fileHandle, $todump);
             $cpt       += $rowtodump;
             $offsetrow += $rowlimit;
             if ($rowtodump<$rowlimit) {
@@ -390,7 +424,8 @@ function backupMySql($DB, $dumpFile, $duree, $rowlimit) {
       echo "<br>".$DB->error()."<hr>";
    }
    $offsettable = -1;
-   fclose($fileHandle);
+   gzclose($fileHandle);
+
    return true;
 }
 
@@ -400,7 +435,7 @@ function backupMySql($DB, $dumpFile, $duree, $rowlimit) {
 if (isset($_GET["dump"]) && $_GET["dump"] != "") {
    $time_file = date("Y-m-d-H-i");
    $cur_time  = date("Y-m-d H:i");
-   $filename  = $path . "/glpi-".GLPI_VERSION."-$time_file.$filetype";
+   $filename  = $path . "/glpi-".GLPI_VERSION."-$time_file.sql.gz";
 
    if (!isset($_GET["duree"]) && is_file($filename)) {
       echo "<div class='center'>".__('The file already exists')."</div>";
@@ -595,7 +630,8 @@ $dir   = opendir($path);
 $files = array();
 while ($file = readdir($dir)) {
    if (($file != ".") && ($file != "..")
-       && preg_match("/\.sql$/i",$file)) {
+       && (preg_match("/\.sql.gz$/i",$file)
+           || preg_match("/\.sql$/i",$file))) {
 
       $files[$file] = filemtime($path."/".$file);
    }
@@ -655,16 +691,15 @@ if (count($files)) {
            "<tr class='tab_bg_2'><td>$file&nbsp;</td>".
             "<td class='right'>".Toolbox::getSize($taille_fic)."</td>".
             "<td>&nbsp;" . Html::convDateTime(date("Y-m-d H:i",$date)) . "</td>".
-            "<td>&nbsp;";
-            //TRANS: %s is the filename
-            $string = sprintf(__('Delete the file %s?'),$file);
-           echo "<a href=\"#\" ".HTML::addConfirmationOnAction($string,
-                     "window.location='".$CFG_GLPI["root_doc"]."/front/backup.php?delfile=$file'").
-                ">"._x('button', 'Delete permanently')."</a>&nbsp;</td>";
-
-            "<td>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;</td>".
-            "<td>&nbsp;<a href=\"document.send.php?file=_dumps/$file\">".__('Download')."</a>".
-            "</td></tr>";
+            "<td colspan=2>&nbsp;";
+      //TRANS: %s is the filename
+      $string = sprintf(__('Delete the file %s?'),$file);
+      Html::showSimpleForm($_SERVER['PHP_SELF'], 'delfile', _x('button', 'Delete permanently'),
+                           array('file' => $file),'','',$string);
+      echo "</td>&nbsp;";
+      echo "<td>&nbsp;<a class='vsubmit' href=\"document.send.php?file=_dumps/$file\">".
+                        __('Download')."</a></td>".
+           "</tr>";
    }
 }
 closedir($dir);

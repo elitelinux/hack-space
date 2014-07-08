@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: document.class.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: document.class.php 22994 2014-06-06 12:51:58Z yllen $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -430,9 +430,17 @@ class Document extends CommonDBTM {
          $fileout = Toolbox::substr($fileout,0,$len)."&hellip;";
       }
 
-      $out = "<a href='".$CFG_GLPI["root_doc"]."/front/document.send.php?docid=".
-               $this->fields['id'].$params."' alt=\"".$initfileout.
-               "\" title=\"".$initfileout."\" target='_blank'>";
+      $out = '';
+      $open = '';
+      $close = '';
+      if (self::canView()
+          || self::canViewFile(array('tickets_id' =>$this->fields['tickets_id']))) {
+         $open = "<a href='".$CFG_GLPI["root_doc"]."/front/document.send.php?docid=".
+                  $this->fields['id'].$params."' alt=\"".$initfileout."\"
+                        title=\"".$initfileout."\"target='_blank'>";
+         $close = "</a>";
+      }
+
 
       $splitter = explode("/",$this->fields['filepath']);
 
@@ -451,7 +459,7 @@ class Document extends CommonDBTM {
             }
          }
       }
-      $out .= "<span class='b'>$fileout</span></a>";
+      $out .= "$open<span class='b'>$fileout</span>$close";
 
       return $out;
    }
@@ -549,8 +557,8 @@ class Document extends CommonDBTM {
          // Tracking Case
          if (isset($options["tickets_id"])) {
             $job = new Ticket();
-
             if ($job->can($options["tickets_id"],'r')) {
+
                $query = "SELECT *
                          FROM `glpi_documents_items`
                          WHERE `glpi_documents_items`.`items_id` = '".$options["tickets_id"]."'
@@ -628,11 +636,13 @@ class Document extends CommonDBTM {
                    FROM `glpi_documents_items`
                    LEFT JOIN `glpi_knowbaseitems`
                         ON (`glpi_knowbaseitems`.`id` = `glpi_documents_items`.`items_id`)
+                   LEFT JOIN `glpi_entities_knowbaseitems`
+                        ON (`glpi_knowbaseitems`.`id` = `glpi_entities_knowbaseitems`.`knowbaseitems_id`)
                    WHERE `glpi_documents_items`.`itemtype` = 'KnowbaseItem'
                          AND `glpi_documents_items`.`documents_id` = '".$this->fields["id"]."'
                          AND `glpi_knowbaseitems`.`is_faq` = '1'
-                         AND `glpi_knowbaseitems`.`entities_id` = '0'
-                         AND `glpi_knowbaseitems`.`is_recursive` = '1'";
+                         AND `glpi_entities_knowbaseitems`.`entities_id` = '0'
+                         AND `glpi_entities_knowbaseitems`.`is_recursive` = '1'";
 
          $result = $DB->query($query);
          if ($DB->numrows($result) > 0) {

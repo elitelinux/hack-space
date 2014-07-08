@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: ticketrecurrent.class.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: ticketrecurrent.class.php 22907 2014-04-16 07:55:37Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -341,10 +341,17 @@ class TicketRecurrent extends CommonDropdown {
             if (preg_match('/([0-9]+)MONTH/',$periodicity, $matches)) {
                $value = $matches[1];
                $step  = 'MONTH';
-            }
-            if (preg_match('/([0-9]+)YEAR/',$periodicity, $matches)) {
+            } else if (preg_match('/([0-9]+)YEAR/',$periodicity, $matches)) {
                $value = $matches[1];
                $step = 'YEAR';
+            } else {
+               if (($value%DAY_TIMESTAMP)==0) {
+                  $value = $value/DAY_TIMESTAMP;
+                  $step  = "DAY";
+               } else {
+                  $value = $value/HOUR_TIMESTAMP;
+                  $step  = "HOUR";
+               }
             }
             while ($timestart < $now) {
                $timestart = strtotime("+ $value $step",$timestart);

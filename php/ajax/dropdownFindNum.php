@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: dropdownFindNum.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: dropdownFindNum.php 22976 2014-05-15 10:36:33Z tsmr $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -78,12 +78,17 @@ if ((strlen($_POST['searchText']) > 0)
 
    $where .= " AND (`name` ".$search."
                     OR `id` = '".$_POST['searchText']."'";
-
-   if ($_POST['table']!="glpi_softwares" && !$itemtypeisplugin) {
-      $where .= " OR `contact` ".$search."
-                  OR `serial` ".$search."
-                  OR `otherserial` ".$search;
+   
+   if (FieldExists($_POST['table'],"contact")) {
+      $where .= " OR `contact` ".$search;
    }
+   if (FieldExists($_POST['table'],"serial")) {
+      $where .= " OR `serial` ".$search;
+   }
+   if (FieldExists($_POST['table'],"otherserial")) {
+      $where .= " OR `otherserial` ".$search;
+   }
+
    $where .= ")";
 }
 
@@ -120,17 +125,14 @@ if ($DB->numrows($result)) {
    while ($data = $DB->fetch_assoc($result)) {
       $output = $data['name'];
 
-      if (($_POST['table'] != "glpi_softwares")
-          && !$itemtypeisplugin) {
-         if (!empty($data['contact'])) {
-            $output = sprintf(__('%1$s - %2$s'), $output, $data['contact']);
-         }
-         if (!empty($data['serial'])) {
-            $output = sprintf(__('%1$s - %2$s'), $output, $data['serial']);
-         }
-         if (!empty($data['otherserial'])) {
-            $output = sprintf(__('%1$s - %2$s'), $output, $data['otherserial']);
-         }
+      if (isset($data['contact']) && !empty($data['contact'])) {
+         $output = sprintf(__('%1$s - %2$s'), $output, $data['contact']);
+      }
+      if (isset($data['serial']) && !empty($data['serial'])) {
+         $output = sprintf(__('%1$s - %2$s'), $output, $data['serial']);
+      }
+      if (isset($data['otherserial']) && !empty($data['otherserial'])) {
+         $output = sprintf(__('%1$s - %2$s'), $output, $data['otherserial']);
       }
 
       if (empty($output)

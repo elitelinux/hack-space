@@ -1,7 +1,7 @@
 <?php
 
 /*
- * @version $Id: crontask.class.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: crontask.class.php 22915 2014-04-16 12:01:59Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -1303,7 +1303,11 @@ class CronTask extends CommonDBTM{
    static function cronSession($task) {
 
       // max time to keep the file session
-      $maxlifetime = session_cache_expire();
+      $maxlifetime = ini_get('session.gc_maxlifetime');
+      if ($maxlifetime==0) {
+         $maxlifetime == WEEK_TIMESTAMP;
+      }
+
       $nb          = 0;
       foreach (glob(GLPI_SESSION_DIR."/sess_*") as $filename) {
          if ((filemtime($filename) + $maxlifetime) < time()) {

@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: softwarelicense.class.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: softwarelicense.class.php 22730 2014-02-28 13:06:02Z yllen $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -608,12 +608,16 @@ class SoftwareLicense extends CommonDBTM {
          if ($num_displayed = $DB->numrows($result)) {
             if ($showmassiveactions) {
                Html::openMassiveActionsForm('mass'.__CLASS__.$rand);
-               $massiveactionparams = array('num_displayed'
-                                              => $num_displayed,
-                                            'extraparams'
-                                              => array('options'
-                                                        => array('condition'
-                                                                 => "`glpi_softwareversions`.`softwares_id` = $softwares_id")));
+               $massiveactionparams
+                  = array('num_displayed'
+                           => $num_displayed,
+                          'extraparams'
+                             => array('options'
+                                       => array('glpi_softwareversions.name'
+                                                 => array('condition'
+                                                           => "`glpi_softwareversions`.`softwares_id` = $softwares_id"),
+                                                'glpi_softwarelicenses.name'
+                                                 => array('itemlink_as_string' => true))));
 
                Html::showMassiveActions(__CLASS__, $massiveactionparams);
             }

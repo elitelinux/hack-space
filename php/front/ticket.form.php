@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: ticket.form.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: ticket.form.php 22829 2014-03-26 14:42:24Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -130,7 +130,7 @@ if (isset($_POST["add"])) {
               //TRANS: %s is the user login
               sprintf(__('%s deletes an actor'), $_SESSION["glpiname"]));
 
-   if ($track->can($_POST["id"],'r')) {
+   if ($track->can($_POST["tickets_id"],'r')) {
       Html::redirect($CFG_GLPI["root_doc"]."/front/ticket.form.php?id=".$_POST["tickets_id"]);
    }
    Session::addMessageAfterRedirect(__('You have been redirected because you no longer have access to this item'),
@@ -145,7 +145,7 @@ if (isset($_POST["add"])) {
    Event::log($_POST['tickets_id'], "ticket", 4, "tracking",
               sprintf(__('%s deletes an actor'), $_SESSION["glpiname"]));
 
-   if ($track->can($_POST["id"],'r')) {
+   if ($track->can($_POST["tickets_id"],'r')) {
       Html::redirect($CFG_GLPI["root_doc"]."/front/ticket.form.php?id=".$_POST["tickets_id"]);
    }
    Session::addMessageAfterRedirect(__('You have been redirected because you no longer have access to this item'),

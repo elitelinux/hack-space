@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: bookmark.class.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: bookmark.class.php 22724 2014-02-26 17:44:56Z yllen $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -82,7 +82,7 @@ class Bookmark extends CommonDBTM {
                   && Session::haveRight('bookmark_public', 'w')
                   && Session::haveAccessToEntity($this->fields['entities_id'])));
    }
-   
+
    function isNewItem() {
       /// For tabs management : force isNewItem
       return false;
@@ -572,7 +572,7 @@ class Bookmark extends CommonDBTM {
          echo "<table class='tab_cadre_fixehov'>";
          echo "<tr>";
          echo "<th>".Html::getCheckAllAsCheckbox('mass'.__CLASS__.$rand)."</th>";
-         echo "<th class='center' colspan='2'>".__('Bookmarks')."</th>";
+         echo "<th class='center' colspan='2'>"._n('Bookmark', 'Bookmarks', 2)."</th>";
          echo "<th width='20px'>&nbsp;</th>";
          echo "<th>".__('Default view')."</th></tr>";
 

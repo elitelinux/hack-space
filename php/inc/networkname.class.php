@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: networkname.class.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: networkname.class.php 22918 2014-04-16 13:37:20Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -265,7 +265,7 @@ class NetworkName extends FQDNLabel {
       $tab[126]['forcegroupby']  = true;
       $tab[126]['massiveaction'] = false;
       $tab[126]['joinparams']    = array('jointype'          => 'itemtype_item',
-                                        'condition'         => 'AND NOT NEWTABLE.`is_deleted`',
+                                        'condition'         => 'AND NEWTABLE.`is_deleted` = 0',
                                         'specific_itemtype' => 'NetworkName',
                                         'beforejoin'        => array('table' => 'glpi_networknames',
                                                                      'joinparams'

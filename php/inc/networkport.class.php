@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: networkport.class.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: networkport.class.php 22918 2014-04-16 13:37:20Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -902,11 +902,11 @@ class NetworkPort extends CommonDBChild {
 
       $networkNameJoin = array('jointype'          => 'itemtype_item',
                                'specific_itemtype' => 'NetworkPort',
-                               'condition'         => 'AND NOT NEWTABLE.`is_deleted`',
+                               'condition'         => 'AND NEWTABLE.`is_deleted` = 0',
                                'beforejoin'        => array('table'      => 'glpi_networkports',
                                                             'joinparams' => $joinparams));
       NetworkName::getSearchOptionsToAdd($tab, $networkNameJoin, $itemtype);
-
+                                                                             
       $instantjoin = array('jointype'   => 'child',
                            'beforejoin' => array('table'      => 'glpi_networkports',
                                                  'joinparams' => $joinparams));

@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: plugin.class.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: plugin.class.php 22808 2014-03-20 16:40:12Z yllen $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -382,7 +382,7 @@ class Plugin extends CommonDBTM {
             echo "</td><td>";
             switch ($plug['state']) {
                case self::ANEW :
-                  echo _x('plugin', 'New');
+                  echo _x('status', 'New');
                   break;
 
                case self::ACTIVATED :

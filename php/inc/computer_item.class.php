@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: computer_item.class.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: computer_item.class.php 22962 2014-04-28 20:00:02Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -626,7 +626,7 @@ class Computer_Item extends CommonDBRelation{
 
             if ($canedit) {
                echo "<td width='10'>";
-               Html::showMassiveActionCheckBox(__CLASS__, $data["id"]);
+               Html::showMassiveActionCheckBox(__CLASS__, $key);
                echo "</td>";
             }
             echo "<td ".

@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: problem.form.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: problem.form.php 22830 2014-03-26 14:45:22Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -99,7 +99,7 @@ if (isset($_POST["add"])) {
    Event::log($_POST['problems_id'], "problem", 4, "maintain",
               sprintf(__('%s deletes an actor'), $_SESSION["glpiname"]));
 
-   if ($problem->can($_POST["id"],'r')) {
+   if ($problem->can($_POST["problems_id"],'r')) {
       Html::redirect($CFG_GLPI["root_doc"]."/front/problem.form.php?id=".$_POST["problems_id"]);
    }
    Session::addMessageAfterRedirect(__('You have been redirected because you no longer have access to this item'),
@@ -114,7 +114,7 @@ if (isset($_POST["add"])) {
    Event::log($_POST['problems_id'], "problem", 4, "maintain",
               sprintf(__('%s deletes an actor'), $_SESSION["glpiname"]));
 
-   if ($problem->can($_POST["id"],'r')) {
+   if ($problem->can($_POST["problems_id"],'r')) {
       Html::redirect($CFG_GLPI["root_doc"]."/front/problem.form.php?id=".$_POST["problems_id"]);
    }
    Session::addMessageAfterRedirect(__('You have been redirected because you no longer have access to this item'),

@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: ticket.class.php 22679 2014-02-21 14:03:09Z yllen $
+ * @version $Id: ticket.class.php 22910 2014-04-16 08:31:42Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -659,6 +659,7 @@ class Ticket extends CommonITILObject {
          }
       }
       $check_allowed_fields_for_template = false;
+      $allowed_fields = array();
       if (!Session::isCron()
           && !Session::haveRight("update_ticket","1")) {
 
@@ -2612,18 +2613,18 @@ class Ticket extends CommonITILObject {
    static function getAllStatusArray($withmetaforsearch=false) {
 
       // To be overridden by class
-      $tab = array(self::INCOMING => _x('ticket', 'New'),
-                   self::ASSIGNED => __('Processing (assigned)'),
-                   self::PLANNED  => __('Processing (planned)'),
+      $tab = array(self::INCOMING => _x('status', 'New'),
+                   self::ASSIGNED => _x('status', 'Processing (assigned)'),
+                   self::PLANNED  => _x('status', 'Processing (planned)'),
                    self::WAITING  => __('Pending'),
-                   self::SOLVED   => __('Solved'),
-                   self::CLOSED   => __('Closed'));
+                   self::SOLVED   => _x('status', 'Solved'),
+                   self::CLOSED   => _x('status', 'Closed'));
 
       if ($withmetaforsearch) {
-         $tab['notold']    = __('Not solved');
-         $tab['notclosed'] = __('Not closed');
+         $tab['notold']    = _x('status', 'Not solved');
+         $tab['notclosed'] = _x('status', 'Not closed');
          $tab['process']   = __('Processing');
-         $tab['old']       = __('Solved + Closed');
+         $tab['old']       = _x('status', 'Solved + Closed');
          $tab['all']       = __('All');
       }
       return $tab;
@@ -2800,6 +2801,7 @@ class Ticket extends CommonITILObject {
                      if ($item->maybeTemplate()) {
                         $query .= " AND `is_template` = '0' ";
                      }
+                     $query .= ' ORDER BY `name`';
 
                      $result = $DB->query($query);
                      if ($DB->numrows($result) > 0) {
@@ -3142,7 +3144,6 @@ class Ticket extends CommonITILObject {
 
       $email  = UserEmail::getDefaultForUser($ID);
 
-
       // Set default values...
       $default_values = array('_users_id_requester_notif'
                                                     => array('use_notification'
@@ -3159,8 +3160,6 @@ class Ticket extends CommonITILObject {
                               'entities_id'         => $_SESSION['glpiactive_entity'],
                               'plan'                => array(),
                               'global_validation'   => 'none',
-                              'due_date'            => 'NULL',
-                              'slas_id'             => 0,
                               '_add_validation'     => 0,
                               'type'                => Entity::getUsedConfig('tickettype',
                                                                              $_SESSION['glpiactive_entity'],
@@ -3276,14 +3275,14 @@ class Ticket extends CommonITILObject {
 
       // Store predefined fields to be able not to take into account on change template
       $predefined_fields = array();
-
       if (isset($tt->predefined) && count($tt->predefined)) {
          foreach ($tt->predefined as $predeffield => $predefvalue) {
             if (isset($values[$predeffield]) && isset($default_values[$predeffield])) {
-               // Is always default value : not set
+               // Is always default value : not set and first load
                // Set if already predefined field
                // Set if ticket template change
-               if (($values[$predeffield] == $default_values[$predeffield])
+               if ((count($values['_predefined_fields'])==0
+                       && ($values[$predeffield] == $default_values[$predeffield]))
                    || (isset($values['_predefined_fields'][$predeffield])
                        && ($values[$predeffield] == $values['_predefined_fields'][$predeffield]))
                    || (isset($values['_tickettemplates_id'])
@@ -3295,7 +3294,10 @@ class Ticket extends CommonITILObject {
                echo "<input type='hidden' name='$predeffield' value='$predefvalue'>";
             }
          }
-
+         // All predefined override : add option to say predifined exists
+         if (count($predefined_fields) == 0) {
+            $predefined_fields['_all_predefined_override'] = 1;
+         }
       } else { // No template load : reset predefined values
          if (count($values['_predefined_fields'])) {
             foreach ($values['_predefined_fields'] as $predeffield => $predefvalue) {
@@ -3768,7 +3770,8 @@ class Ticket extends CommonITILObject {
                   // Is always default value : not set
                   // Set if already predefined field
                   // Set if ticket template change
-                  if (($values[$predeffield] == $default_values[$predeffield])
+                  if ((count($values['_predefined_fields'])==0
+                       && ($values[$predeffield] == $default_values[$predeffield]))
                      || (isset($values['_predefined_fields'][$predeffield])
                          && ($values[$predeffield] == $values['_predefined_fields'][$predeffield]))
                      || (isset($values['_tickettemplates_id'])
@@ -3779,6 +3782,10 @@ class Ticket extends CommonITILObject {
                      $predefined_fields[$predeffield] = $predefvalue;
                   }
                }
+            }
+            // All predefined override : add option to say predifined exists
+            if (count($predefined_fields) == 0) {
+               $predefined_fields['_all_predefined_override'] = 1;
             }
 
          } else { // No template load : reset predefined values

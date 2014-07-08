@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: commonglpi.class.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: commonglpi.class.php 22997 2014-06-11 07:41:25Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -380,13 +380,16 @@ class CommonGLPI {
          if (isset($options['withtemplate'])) {
             $withtemplate = $options['withtemplate'];
          }
-         foreach ($options as $key => $val) {
-            // Do not include id options
-            if (($key[0] != '_') && ($key != 'id')) {
-               $extraparamhtml .= "&amp;$key=$val";
-               $extraparam     .= "&$key=$val";
-            }
-         }
+         $extraparamhtml = "&amp;".Toolbox::append_params($options,'&amp;');
+         $extraparam     = "&".Toolbox::append_params($options);
+         
+//          foreach ($options as $key => $val) {
+//             // Do not include id options
+//             if (($key[0] != '_') && ($key != 'id')) {
+//                $extraparamhtml .= "&amp;$key=$val";
+//                $extraparam     .= "&$key=$val";
+//             }
+//          }
       }
 
       if (empty($withtemplate)

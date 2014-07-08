@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: rule.class.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: rule.class.php 22964 2014-04-28 20:03:48Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -2434,7 +2434,7 @@ class Rule extends CommonDBTM {
                                                             = '".$item->getID()."'");
                   }
 
-                  return self::createTabEntry(self::getTypeName(2), 2);
+                  return self::createTabEntry(self::getTypeName(2), $nb);
                }
                return $this->getTypeName(2);
 

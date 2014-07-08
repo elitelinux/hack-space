@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: central.class.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: central.class.php 22986 2014-05-30 10:34:27Z yllen $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -225,7 +225,7 @@ class Central extends CommonGLPI {
       echo "<tr><td class='top' width='50%'>";
       RSSFeed::showListForCentral();
       echo "</td><td class='top' width='50%'>";
-      if (Session::haveRight("rssfeed_public","r")) {
+      if (RSSFeed::canView()) {
          RSSFeed::showListForCentral(false);
       } else {
          echo "&nbsp;";

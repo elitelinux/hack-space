@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: tickettemplatepredefinedfield.class.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: tickettemplatepredefinedfield.class.php 22739 2014-02-28 14:56:01Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.

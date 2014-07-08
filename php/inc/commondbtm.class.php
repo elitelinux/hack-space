@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: commondbtm.class.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: commondbtm.class.php 22735 2014-02-28 14:50:38Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -2545,7 +2545,7 @@ class CommonDBTM extends CommonGLPI {
       }
       return $nb;
    }
-   
+
    /**
     * Return a field Value if exists
     *
@@ -4366,6 +4366,11 @@ class CommonDBTM extends CommonGLPI {
             $unit = $searchoptions['unit'];
          }
 
+         if (isset($options[$searchoptions['table'].'.'.$searchoptions['field']])) {
+            $options = array_merge($options,
+                                   $options[$searchoptions['table'].'.'.$searchoptions['field']]);
+         }
+
          switch ($searchoptions['datatype']) {
             case "number" :
             case "integer" :
@@ -4397,7 +4402,7 @@ class CommonDBTM extends CommonGLPI {
             case "date_delay" :
                if (isset($options['relative_dates']) && $options['relative_dates']) {
                   if (isset($searchoptions['maybefuture']) && $searchoptions['maybefuture']) {
-                     $options['maybefuture'] = true;
+                     $options['with_future'] = true;
                   }
                   return Html::showGenericDateTimeSearch($name, $value, $options);
                }
@@ -4413,7 +4418,7 @@ class CommonDBTM extends CommonGLPI {
             case "datetime" :
                if (isset($options['relative_dates']) && $options['relative_dates']) {
                   if (isset($searchoptions['maybefuture']) && $searchoptions['maybefuture']) {
-                     $options['maybefuture'] = true;
+                     $options['with_future'] = true;
                   }
                   $options['with_time'] = true;
                   return Html::showGenericDateTimeSearch($name, $value, $options);
