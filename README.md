@@ -1,6 +1,12 @@
 What is HackSpace:
 =========================
-It´s a Fork modified respecting licensing, regarding orientation and improvements in innovation concept of the app GLPI This app will be Oriented to: Management of the Smart Cities, Ideas for Social Innovation, entrepreneurial ideas, Coordination and Clusters Business, Living Labs and control in government sectors
+It´s a Fork modified respecting licensing, regarding orientation and improvements in innovation concept of the app GLPI This app will be Oriented to: Management of the Smart Cities, Ideas for Social Innovation, entrepreneurial ideas, Coordination and Clusters Business, Living Labs and control in government sectors.
+This App will help you to your Smart Cities projects for make your city a ISO 37120:2014 Compliant
+This app is compatible with: ITIL 2011, ISO/IEC 20000 and PRINCE2
+
+What I need to make my HackSpace a ISO 37120:2014 compliant?
+============================================================
+Just Convert your entities in a any of the 17 Factors of the ISO 37120 and Enjoy!
 
 What is GLPI:
 =========================
