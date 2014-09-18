@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: commontreedropdown.class.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: commontreedropdown.class.php 23032 2014-06-20 07:12:27Z ddurieux $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -175,7 +175,7 @@ abstract class CommonTreeDropdown extends CommonDropdown {
          }
          // Parent changes => clear ancestors and update its level and completename
          if ($input[$this->getForeignKeyField()] != $this->fields[$this->getForeignKeyField()]) {
-            $input["ancestors_cache"] = NULL;
+            $input["ancestors_cache"] = '';
             return $this->adaptTreeFieldsFromUpdateOrAdd($input);
          }
       }
@@ -323,7 +323,7 @@ abstract class CommonTreeDropdown extends CommonDropdown {
             Log::history($ID, $this->getType(), $changes, $this->getType(),
                          Log::HISTORY_UPDATE_SUBITEM);
          }
-
+         getAncestorsOf(getTableForItemType($this->getType()), $ID);
       }
    }
 

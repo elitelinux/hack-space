@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: html.class.php 22657 2014-02-12 16:17:54Z moyo $
+ * @version $Id: html.class.php 23056 2014-06-25 08:46:07Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -4113,6 +4113,7 @@ class Html {
          mode : 'exact',
          elements: '$name',
          valid_elements: '*[*]',
+         browser_spellcheck : true,
          plugins : 'table,directionality,searchreplace',
          theme : 'advanced',
          entity_encoding : 'raw', ";

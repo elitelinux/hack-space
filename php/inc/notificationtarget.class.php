@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: notificationtarget.class.php 23020 2014-06-17 12:08:30Z yllen $
+ * @version $Id: notificationtarget.class.php 23070 2014-07-10 17:02:17Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -987,14 +987,7 @@ class NotificationTarget extends CommonDBChild {
 
                default :
                   //Maybe a target specific to a type
-                  // action for target from core
-                  if ($data['items_id'] < 1000) {
-                     $this->getSpecificTargets($data,$options);
-                  // action for target from plugin
-                  } else {
-                     $this->data = $data;
-                     Plugin::doHook('item_action_targets',$this);
-                  }
+                  $this->getSpecificTargets($data,$options);
             }
             break;
 
@@ -1022,6 +1015,9 @@ class NotificationTarget extends CommonDBChild {
             //Maybe a target specific to a type
             $this->getSpecificTargets($data,$options);
       }
+      // action for target from plugin
+      $this->data = $data;
+      Plugin::doHook('item_action_targets',$this);
    }
 
 

@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: search.class.php 22992 2014-06-04 23:07:06Z ddurieux $
+ * @version $Id: search.class.php 23038 2014-06-20 09:47:55Z moyo $
  -------------------------------------------------------------------------
  GLPI - Gestionnaire Libre de Parc Informatique
  Copyright (C) 2003-2014 by the INDEPNET Development Team.
@@ -2823,6 +2823,7 @@ class Search {
 
       switch ($inittable.".".$field) {
 //          case "glpi_users_validation.name" :
+
          case "glpi_users.name" :
             if ($itemtype == 'User') { // glpi_users case / not link table
                if (in_array($searchtype, array('equals', 'notequals'))) {
@@ -3252,6 +3253,9 @@ class Search {
                   } else if (strcasecmp($val,__('Yes')) == 0) {
                      $val = 1;
                   }
+               }
+               if ($searchtype == 'notequals') {
+                  $nott = !$nott;
                }
                // No break here : use number comparaison case
 
