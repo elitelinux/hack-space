@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: methodtools.class.php 365 2014-02-09 16:48:19Z yllen $
+ * @version $Id: methodtools.class.php 363 2014-02-09 16:45:11Z yllen $
  -------------------------------------------------------------------------
  webservices - WebServices plugin for GLPI
  Copyright (C) 2003-2013 by the webservices Development Team.

@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: setup.php 365 2014-02-09 16:48:19Z yllen $
+ * @version $Id: setup.php 367 2014-03-04 11:04:23Z yllen $
  -------------------------------------------------------------------------
  webservices - WebServices plugin for GLPI
  Copyright (C) 2003-2013 by the webservices Development Team.
@@ -90,12 +90,12 @@ function plugin_init_webservices() {
                                           'class'          => 'PluginWebservicesMethodHelpdesk'),
 
               'with_ticketfollowup'
-                                 => array('help'          => 'bool', 'optional (Ticket only)',
+                                 => array('help'           => 'bool', 'optional (Ticket only)',
                                           'itemtype'       => 'TicketFollowup',
                                           'allowed_types'  => array('Ticket'),
                                           'class'          => 'PluginWebservicesMethodHelpdesk'),
               'with_ticketvalidation'
-                                 => array('help'        => 'bool', 'optional (Ticket only)',
+                                 => array('help'           => 'bool', 'optional (Ticket only)',
                                           'itemtype'       => 'TicketValidation',
                                           'allowed_types'  => array('Ticket'),
                                           'class'          => 'PluginWebservicesMethodHelpdesk'),
@@ -130,15 +130,14 @@ function plugin_init_webservices() {
 }
 
 
-// Get the name and the version of the plugin - Needed
 function plugin_version_webservices() {
 
    return array('name'           => __('Web Services', 'webservices'),
-                'version'        => '1.4.1',
+                'version'        => '1.4.2',
                 'author'         => 'Remi Collet, Nelly Mahu-Lasson, Walid Nouh',
                 'license'        => 'GPLv2+',
                 'homepage'       => 'https://forge.indepnet.net/projects/show/webservices',
-                'minGlpiVersion' => '0.84');
+                'minGlpiVersion' => '0.84.5');
 }
 
 

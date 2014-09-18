@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: methodcommon.class.php 351 2013-05-22 14:41:59Z yllen $
+ * @version $Id: methodcommon.class.php 379 2014-04-06 15:49:28Z yllen $
  -------------------------------------------------------------------------
  webservices - WebServices plugin for GLPI
  Copyright (C) 2003-2013 by the webservices Development Team.
@@ -248,23 +248,6 @@ class PluginWebservicesMethodCommon {
       if (($ok_master || $ok_slave)
           && DBConnection::establishDBConnection(false, false, false)) {
 
-         // Check OCS connections
-         $query = "SELECT `id`, `name`
-                   FROM `glpi_ocsservers` WHERE `is_active`='1'";
-
-         if ($result = $DB->query($query)) {
-            if ($DB->numrows($result)) {
-               while ($data = $DB->fetch_assoc($result)) {
-                  if (OcsServer::checkOCSconnection($data['id'])) {
-                     $resp['OCS_' . $data['name']] = "ok";
-                  } else {
-                     $resp['OCS_' . $data['name']] = "offline";
-                     $ok = false;
-                  }
-               }
-            }
-         }
-
          // Check Auth connections
          $auth = new Auth();
          $auth->getAuthMethods();
@@ -501,7 +484,8 @@ class PluginWebservicesMethodCommon {
                                   if (isset($option['itemlink_type'])) {
                                      $obj = new $option['itemlink_type']();
                                   } else {
-                                     $obj = new $option['itemlink_link']();
+                                     $itemtype = getItemTypeForTable($option['table']);
+                                     $obj = new $itemtype();
                                   }
                                   $obj->getFromDB($p['data'][$linkfield]);
                                   $tmp[$linkfield]   = $p['data'][$linkfield];

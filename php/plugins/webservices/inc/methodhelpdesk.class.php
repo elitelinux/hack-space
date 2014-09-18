@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: methodhelpdesk.class.php 365 2014-02-09 16:48:19Z yllen $
+ * @version $Id: methodhelpdesk.class.php 379 2014-04-06 15:49:28Z yllen $
  -------------------------------------------------------------------------
  webservices - WebServices plugin for GLPI
  Copyright (C) 2003-2013 by the webservices Development Team.
@@ -851,9 +851,6 @@ class PluginWebservicesMethodHelpdesk extends PluginWebservicesMethodCommon {
                = Html::clean(getUserName($ticket->fields['users_id_recipient']));
          $resp['users_name_lastupdater']
                = Html::clean(getUserName($ticket->fields['users_id_lastupdater']));
-         $resp['suppliers_name_assign']
-               = Html::clean(Dropdown::getDropdownName('glpi_manufacturers',
-                                                       $ticket->fields['suppliers_id_assign']));
          $resp['ticketcategories_name']
                = Html::clean(Dropdown::getDropdownName('glpi_itilcategories',
                                                        $ticket->fields['itilcategories_id']));
@@ -884,6 +881,8 @@ class PluginWebservicesMethodHelpdesk extends PluginWebservicesMethodCommon {
                = Ticket::getTicketTypeName($resp['type']);
          $resp['global_validation_name']
                = TicketValidation::getStatus($resp['global_validation']);
+         $resp['locations_name']
+               = Html::clean(Dropdown::getDropdownName('glpi_locations', $resp['locations_id']));
 
          if ($item && $item->getFromDB($resp['items_id'])) {
             $resp['items_name']     = Html::clean($item->getNameID());
@@ -1006,6 +1005,19 @@ class PluginWebservicesMethodHelpdesk extends PluginWebservicesMethodCommon {
             $resp['groups'][$name][] = $group;
          }
       }
+      // Suppliers
+      $resp['suppliers']['assign'] = array();
+      foreach ($ticket->getSuppliers(CommonITILActor::ASSIGN) as $supplier) {
+         if (isset($params['id2name'])) {
+            $supplier['suppliers_name']
+               = Html::clean(Dropdown::getDropdownName('glpi_suppliers',
+                                                       $supplier['suppliers_id']));
+         }
+         unset($supplier['tickets_id']);
+         unset($supplier['type']);
+         $resp['suppliers'][$name][] = $supplier;
+      }
+
 
       // Satisfaction
       $satisfaction = new TicketSatisfaction();
@@ -1101,10 +1113,15 @@ class PluginWebservicesMethodHelpdesk extends PluginWebservicesMethodCommon {
       $private = (isset($params['private']) && $params['private'] ? 1 : 0);
 
       $followup = new TicketFollowup();
+      $user = 0;
+      if (isset($users_id)) {
+         $user = $users_id;
+      }
       $data = array('tickets_id' => $params['ticket'],
                     'requesttypes_id'
                                  => $source,
                     'is_private' => $private,
+                    'users_id'   => $user,
                     'content'    => addslashes(Toolbox::clean_cross_side_scripting_deep($params["content"])));
 
       if (isset($params['close'])) {
@@ -2016,19 +2033,24 @@ class PluginWebservicesMethodHelpdesk extends PluginWebservicesMethodCommon {
       }
 
       // supplier to assign : optionnal,  default = none
-      $supplier_ticket = new Supplier();
-      $supplier = array('id' => $params['ticket']);
+      $supplier_ticket = new Supplier_Ticket();
+      $supplier = array('tickets_id' => $params['ticket'],
+                        'type'       => CommonITILActor::ASSIGN);
 
       if (isset($params['supplier'])) {
          if (!is_numeric($params['supplier'])) {
             return self::Error($protocol, WEBSERVICES_ERROR_BADPARAMETER, '', 'supplier');
          }
-         $supplier['suppliers_id_assign'] = $params['supplier'];
+         $supplier['suppliers_id'] = $params['supplier'];
          if (!$supplier_ticket->can(-1, 'w', $supplier)) {
             return self::Error($protocol, WEBSERVICES_ERROR_NOTALLOWED);
          }
+         if ($ticket->isSupplier(CommonITILActor::ASSIGN, $params['supplier'])) {
+            return self::Error($protocol, WEBSERVICES_ERROR_FAILED, '',
+                  'Supplier already assign for this ticket');
+         }
 
-         if (!$ticket->update($supplier)) {
+         if (!$supplier_ticket->add($supplier)) {
             return self::Error($protocol, WEBSERVICES_ERROR_FAILED, '',
                                'supplier not assign');
          }

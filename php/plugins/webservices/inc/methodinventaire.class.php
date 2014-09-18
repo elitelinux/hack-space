@@ -1,6 +1,6 @@
 <?php
 /*
- * @version $Id: methodinventaire.class.php 350 2013-05-22 13:38:57Z yllen $
+ * @version $Id: methodinventaire.class.php 374 2014-03-25 18:37:03Z yllen $
  -------------------------------------------------------------------------
  webservices - WebServices plugin for GLPI
  Copyright (C) 2003-2013 by the webservices Development Team.
@@ -119,14 +119,15 @@ class PluginWebservicesMethodInventaire extends PluginWebservicesMethodCommon {
       if ($item->getField('entities_id') != NOT_AVAILABLE) {
          $left_join = " LEFT JOIN `glpi_entities`
                            ON (`$table`.`entities_id` = `glpi_entities`.`id`) ";
-      }
-      $already_joined = array();
-      $left_join.= self::listInventoryObjectsRequestLeftJoins($params, $item, $table, $already_joined).
-                   getEntitiesRestrictRequest(" AND ", $table);
 
-      $where = self::listInventoryObjectsRequestParameters($params, $item, $table, $where);
+         $already_joined = array();
+         $left_join.= self::listInventoryObjectsRequestLeftJoins($params, $item, $table, $already_joined).
+                      getEntitiesRestrictRequest(" AND ", $table);
+
+         $where = self::listInventoryObjectsRequestParameters($params, $item, $table, $where);
+      }
       $query = "SELECT `$table`.* FROM `$table`
-                   $left_join
+                $left_join
                 $where
                 ORDER BY `id`
                 LIMIT $start,$limit";
@@ -1602,7 +1603,7 @@ class PluginWebservicesMethodInventaire extends PluginWebservicesMethodCommon {
       $item = new $params['itemtype']();
       if (!$item->getFromDB($params['id'])
           || !Session::haveRight('contract','r')
-          || $item->can($params['id'], 'r')) {
+          || !$item->can($params['id'], 'r')) {
          return self::Error($protocol, WEBSERVICES_ERROR_NOTFOUND);
       }
 
